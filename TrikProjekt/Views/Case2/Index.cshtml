@@ -1,0 +1,85 @@
+﻿@model IEnumerable<TrikProjekt56.Models.Case>
+@{
+    ViewData["Title"] = "Index";
+    SortModel sortModel = (SortModel)ViewData["sortModel"];
+    SiteModel site = ViewBag.Site;
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<div class="container-fluid btn-group">
+    <div class="col-10">
+        <h2>Case</h2>
+    </div>
+    <div class="col-2 justify-content-end">
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Create new</a>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <partial name="TopBar" model="@site" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table myBackground shadowtable">
+            <thead>
+                <tr>
+                    <th>
+                        <i class="@sortModel.GetColumn("Code").SortIcon" arial-hidden="true"></i>
+                        <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("Code").SortExpression">
+                            @Html.DisplayNameFor(model => model.Code)
+                        </a>
+                    </th>
+                    <th>
+                        <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
+                        <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </a>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <a asp-action="Edit" asp-route-id="@item.Code">
+                                <span class="btn btn-sm btn-outline-secondary">
+                                    <i class="fa fa-edit" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Code">
+                                <span class="btn btn-sm btn-outline-secondary">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Code">
+                                <span class="btn btn-sm btn-outline-secondary">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <partial name="BottomBar" model="@site" />
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

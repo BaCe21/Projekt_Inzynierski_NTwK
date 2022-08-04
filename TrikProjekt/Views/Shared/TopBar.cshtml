@@ -1,0 +1,79 @@
+﻿@model SiteModel
+<style>
+    .page-link{
+        color:black !important;
+    }
+    .page-item.active .page-link{
+        z-index:3;
+        background-color:red;
+        border-color:red;
+    }
+</style>
+<div class="container btn-group" style="background-color:darkgrey; height:45px; border-radius:15px 15px 0px 0px;">
+    <div class="col-4 p-0 justify-content-end mt-2">
+    <form asp-action="Index">
+        <p class="btn-group">
+            <input class="form-contol" type="text" name="SearchText" placeholder="Enter Text" style="width: 5rem !important;" value="@ViewBag.SearchText"/>
+            <span class="ml-2 btn-group btn-danger" style="border-radius:15px;">
+                <i class="pl-2 fa fa-search align-self-center" aria-hidden="true"></i>
+                <input class="btn btn-sm text-white" type="submit" value="Search"/>
+            </span>
+        </p>
+    </form>
+</div>
+    <div class="container mt-2">
+        <ul class="pagination justify-content-end">
+            @if (Model.CurrentPage > 1)
+            {
+                <li class="page-item">
+                <a class="page-link" 
+                 asp-action="@Model.Action" 
+                 asp-route-pageIndex="1"
+                 asp-route-sortExpression = "@Model.SortExpression"
+                 asp-route-pageSize="@Model.PageSize" 
+                 asp-route-SearchText="@Model.SearchText">
+                 <i class="fa-solid fa-backward-fast"></i>
+                 </a>
+                 </li>
+                <li class="page-item">
+                <a class="page-link" 
+                 asp-action="@Model.Action" 
+                 asp-route-pageIndex="@(Model.CurrentPage - 1)"
+                 asp-route-sortExpression = "@Model.SortExpression"
+                 asp-route-pageSize="@Model.PageSize" 
+                 asp-route-SearchText="@Model.SearchText">
+                 <i class="fa-solid fa-backward-step"></i>
+                 </a>
+                 </li>
+            }
+            <li class="page-item">
+                <span class="page-link">
+                    @Model.CurrentPage
+                </span>   
+            </li>
+            @if (Model.CurrentPage < Model.TotalPages)
+            {
+
+                <li class="page-item">
+                <a class="page-link" asp-action="@Model.Action" 
+                 asp-route-pageIndex="@(Model.CurrentPage + 1)"
+                 asp-route-sortExpression = "@Model.SortExpression"
+                 asp-route-pageSize="@Model.PageSize" 
+                 asp-route-SearchText="@Model.SearchText">
+                <i class="fa-solid fa-forward-step"></i>
+                 </a>
+                 </li>
+                <li class="page-item">
+                <a class="page-link" 
+                 asp-action="@Model.Action" 
+                 asp-route-pageIndex="@Model.TotalPages"
+                 asp-route-sortExpression = "@Model.SortExpression"
+                 asp-route-pageSize="@Model.PageSize" 
+                 asp-route-SearchText="@Model.SearchText">
+                 <i class="fa-solid fa-forward-fast"></i>
+                 </a>
+                 </li>
+            }
+        </ul>
+    </div>
+</div>
