@@ -156,3 +156,7 @@ table.shadowtable tr:hover td {
     font-size: 1.1rem !important;
     line-height: 1rem !important;
 }
+
+ul li a:hover {
+    background-color: red;
+}
