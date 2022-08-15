@@ -16,23 +16,27 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">TrikProject</a>
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fa-solid fa-3 fa-lg mr-1"></i><i class="fa-solid fa-k fa-lg mr-1"></i><i class="fa-solid fa-magic-wand-sparkles fa-lg mr-1"></i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house fa-lg mr-1"></i>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fa-solid fa-key fa-lg mr-1"></i>Privacy</a>
                         </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
                         <li class="dropdown nav-item">
                             <a class="nav-link dropdown-toggle text-white" aria-expanded="true" aria-haspopup="true" data-toggle="dropdown">
-                                Modules
+                                <i class="fa-brands fa-buffer fa-lg mr-1"></i>Modules
                             </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu myBackground">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
                         </li>
@@ -63,15 +67,21 @@
                         </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white target" asp-area="" asp-controller="Case" asp-action="Index">Cases</a>
+                            <a class="nav-link text-white target" asp-area="" asp-controller="Case" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white target2" asp-area="" asp-controller="Case2" asp-action="Index">Cases - mobile</a>
+                            <a class="nav-link text-white target2" asp-area="" asp-controller="Case2" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases - mobile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-image fa-lg mr-1"></i>Images</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-share-nodes fa-lg mr-1"></i>Machine Learning</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-chart-pie fa-lg mr-1"></i>Statistics</a>
                         </li>
                         }
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

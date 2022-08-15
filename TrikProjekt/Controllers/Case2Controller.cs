@@ -61,6 +61,7 @@
         {
             Case item = new Case();
             AddViewbags();
+            TempData.Keep();
             return View(item);
         }
 
@@ -68,8 +69,19 @@
         public IActionResult Create(Case item)
         {
             AddViewbags();
+            TempData.Keep();
             bool myBool = false;
             string errMessage = "";
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
+            int currentPage = 1;
+            if (TempData["CurrentPage"] != null)
+            {
+                currentPage = (int)TempData["CurrentPage"];
+            }
             try
             {
                 if (item.Name.Length < 3 || item.Name == null)
@@ -97,7 +109,7 @@
             else
             {
                 TempData["SuccessMessage"] = item.Name + " created successfully!";
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
             }
         }
 

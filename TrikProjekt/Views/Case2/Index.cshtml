@@ -27,13 +27,13 @@
                 <tr>
                     <th>
                         <i class="@sortModel.GetColumn("Code").SortIcon" arial-hidden="true"></i>
-                        <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("Code").SortExpression">
+                        <a asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-sortExpression="@sortModel.GetColumn("Code").SortExpression">
                             @Html.DisplayNameFor(model => model.Code)
                         </a>
                     </th>
                     <th>
                         <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
-                        <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
+                        <a asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
                             @Html.DisplayNameFor(model => model.Name)
                         </a>
                     </th>

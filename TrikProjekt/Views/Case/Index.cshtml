@@ -27,31 +27,31 @@
                 <tr>
                     <th>
                         <i class="@sortModel.GetColumn("Code").SortIcon" arial-hidden="true"></i>
-                        <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("Code").SortExpression">
+                        <a asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-sortExpression="@sortModel.GetColumn("Code").SortExpression">
                             @Html.DisplayNameFor(model => model.Code)
                         </a>
                     </th>
                     <th>
                         <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
-                        <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
+                        <a asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
                             @Html.DisplayNameFor(model => model.Name)
                         </a>
                     </th>
                     <th>
                         <i class="@sortModel.GetColumn("StartDate").SortIcon" arial-hidden="true"></i>
-                        <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("StartDate").SortExpression">
+                        <a asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-sortExpression="@sortModel.GetColumn("StartDate").SortExpression">
                             @Html.DisplayNameFor(model => model.StartDate)
                         </a>
                     </th>
                     <th>
                         <i class="@sortModel.GetColumn("isClosed").SortIcon" arial-hidden="true"></i>
-                        <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("isClosed").SortExpression">
+                        <a asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-sortExpression="@sortModel.GetColumn("isClosed").SortExpression">
                             @Html.DisplayNameFor(model => model.isClosed)
                         </a>
                     </th>
                     <th>
                         <i class="@sortModel.GetColumn("CategoryId").SortIcon" arial-hidden="true"></i>
-                        <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("CategoryId").SortExpression">
+                        <a asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-sortExpression="@sortModel.GetColumn("CategoryId").SortExpression">
                             @Html.DisplayNameFor(model => model.CategoryId)
                         </a>
                     </th>
