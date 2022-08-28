@@ -156,3 +156,14 @@ table.shadowtable tr:hover td {
     font-size: 1.1rem !important;
     line-height: 1rem !important;
 }
+
+nav div ul li a:hover {
+    background-color: red;
+    transition: all 0.5s;
+}
+
+#chart_container {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+}

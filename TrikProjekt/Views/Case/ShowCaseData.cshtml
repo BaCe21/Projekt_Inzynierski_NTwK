@@ -1,7 +1,33 @@
-﻿@model TrikProjekt56.Models.Case
-
+﻿@model IEnumerable<TrikProjekt56.Models.Case>
 @{
     ViewData["Title"] = "Create";
 }
+<script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<div>@ViewBag.Categories.Name</div>
+<div id="chart_container">
+    <canvas id="bar_chart"></canvas>
+</div>
+
+<script>
+var catArray = @Html.Raw(Json.Serialize(ViewBag.Categories));
+var catArray2 = @Html.Raw(Json.Serialize(ViewBag.Category));
+var ctx = $("#bar_chart");
+var catChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: catArray2,
+        datasets: [{
+            label: "Bar Chart",
+            data: catArray,
+            borderWidth: 1
+        }]
+    },
+    myOptions: {
+        maintainAspectRatio: false
+    }
+});
+</script>

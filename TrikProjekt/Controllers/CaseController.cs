@@ -43,9 +43,19 @@
 
         public IActionResult ShowCaseData()
         {
-            ViewBag.Categories = GetCategories();
-            return View();
+            List<Case> items = _repo.GetAllItems();
+            var testlabel = items.Select(x => x.Categories.Name).Distinct().ToList();
+            List<int> dataitems = new List<int>();
+            var counter = items.Select(x => x.Categories).Distinct();
+            foreach (var category in counter)
+            {
+                dataitems.Add(items.Count(x => x.Categories == category));
+            }
+            ViewBag.Category = testlabel;
+            ViewBag.Categories = dataitems;
+            return View(items);
         }
+
         public IActionResult Index(string sortExpression = "", string SearchText = "", int pageIndex = 1, int pageSize = 5)
         {
             SortModel sortModel = new SortModel();
