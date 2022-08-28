@@ -1,7 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,21 +65,24 @@
                         </li>
                         </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white target" asp-area="" asp-controller="Case" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white target2" asp-area="" asp-controller="Case2" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases - mobile</a>
-                        </li>
-                        <li class="nav-item">
+                            @if (Admins.admins.Contains(@UserManager.GetUserName(User)))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-white target" asp-area="" asp-controller="Case" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white target2" asp-area="" asp-controller="Case2" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases - mobile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-share-nodes fa-lg mr-1"></i>Machine Learning</a>
+                                </li>
+                            }
+                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-image fa-lg mr-1"></i>Images</a>
-                        </li>
+                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-share-nodes fa-lg mr-1"></i>Machine Learning</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-chart-pie fa-lg mr-1"></i>Statistics</a>
-                        </li>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Case" asp-action="ShowCaseData"><i class="fa-solid fa-chart-pie fa-lg mr-1"></i>Statistics</a>
+                        </li>   
                         }
                     </ul>
                     <partial name="_LoginPartial" />

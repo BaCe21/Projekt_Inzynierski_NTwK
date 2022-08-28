@@ -40,6 +40,12 @@
             _heightrepo = heightrepo;
             _weightrepo = weightrepo;
         }
+
+        public IActionResult ShowCaseData()
+        {
+            ViewBag.Categories = GetCategories();
+            return View();
+        }
         public IActionResult Index(string sortExpression = "", string SearchText = "", int pageIndex = 1, int pageSize = 5)
         {
             SortModel sortModel = new SortModel();
