@@ -99,6 +99,12 @@
             Pagination<Case> retItems = new Pagination<Case>(items, pageIndex, pageSize);
             return retItems;
         }
+        public List<Case> GetAllItems()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(u => u.Categories).ToList();
+            return items;
+        }
         public bool IsExisting(string name)
         {
             int ct = _context.Cases.Where(n => n.Name.ToLower() == name.ToLower()).Count();
