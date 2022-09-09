@@ -25,6 +25,8 @@ namespace TrikProjekt56.Models
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
         public virtual Category Categories { get; set; }
+
+        [Required]
         [ForeignKey("Locations")]
         [Display(Name = "Location")]
         public int? LocationId { get; set; }

@@ -4,6 +4,7 @@
     SortModel sortModel = (SortModel)ViewData["sortModel"];
     SiteModel site = ViewBag.Site;
 }
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <div class="container-fluid btn-group">
     <div class="col-10">
@@ -108,5 +109,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ValidationPartial");}
 }

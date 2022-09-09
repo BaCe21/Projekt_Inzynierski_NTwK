@@ -162,7 +162,13 @@ nav div ul li a:hover {
     transition: all 0.5s;
 }
 
+/*GRAPHS*/
 #chart_container {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+#chart_container2 {
     width: 400px;
     height: 200px;
     border: 1px solid #ddd;

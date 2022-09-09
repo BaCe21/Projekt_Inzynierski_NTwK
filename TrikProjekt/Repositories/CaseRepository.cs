@@ -99,10 +99,16 @@
             Pagination<Case> retItems = new Pagination<Case>(items, pageIndex, pageSize);
             return retItems;
         }
-        public List<Case> GetAllItems()
+        public List<Case> GetCategiores()
         {
             List<Case> items;
             items = _context.Cases.Include(u => u.Categories).ToList();
+            return items;
+        }
+        public List<Case> GetLocations()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(u => u.Locations).ToList();
             return items;
         }
         public bool IsExisting(string name)

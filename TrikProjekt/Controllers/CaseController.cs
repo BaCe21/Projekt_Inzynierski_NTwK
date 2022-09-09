@@ -43,17 +43,32 @@
 
         public IActionResult ShowCaseData()
         {
-            List<Case> items = _repo.GetAllItems();
-            var testlabel = items.Select(x => x.Categories.Name).Distinct().ToList();
-            List<int> dataitems = new List<int>();
-            var counter = items.Select(x => x.Categories).Distinct();
+            //Category data
+            List<Case> catitems = _repo.GetCategiores();
+            var catlabel = catitems.Select(x => x.Categories.Name).Distinct().ToList();
+            List<int> catdata = new List<int>();
+            var counter = catitems.Select(x => x.Categories).Distinct();
             foreach (var category in counter)
             {
-                dataitems.Add(items.Count(x => x.Categories == category));
+                catdata.Add(catitems.Count(x => x.Categories == category));
             }
-            ViewBag.Category = testlabel;
-            ViewBag.Categories = dataitems;
-            return View(items);
+            ViewBag.Category = catlabel;
+            ViewBag.Categories = catdata;
+
+            //Location data
+            List<Case> locitems = _repo.GetLocations();
+            var loclabel = locitems.Select(l => l.Locations.Name).Distinct().ToList();
+            List<int> locdata = new List<int>();
+            var counter2 = locitems.Select(x => x.Locations).Distinct();
+            foreach (var location in counter2)
+            {
+                locdata.Add(locitems.Count(x => x.Locations == location));
+            }
+            ViewBag.Location = loclabel;
+            ViewBag.Locations = locdata;
+
+            //Generate View
+            return View();
         }
 
         public IActionResult Index(string sortExpression = "", string SearchText = "", int pageIndex = 1, int pageSize = 5)

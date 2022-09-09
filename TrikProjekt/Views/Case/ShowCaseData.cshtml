@@ -1,23 +1,30 @@
-﻿@model IEnumerable<TrikProjekt56.Models.Case>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<TrikProjekt56.Models.Case>
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Dashboard";
 }
 <script
   src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+@if (Admins.admins.Contains(@UserManager.GetUserName(User)))
+{
 <div id="chart_container">
     <canvas id="bar_chart"></canvas>
 </div>
-
+<div id="chart_container2">
+    <canvas id="bar_chart2"></canvas>
+</div>
 <script>
+@*Category Graph*@
 var catArray = @Html.Raw(Json.Serialize(ViewBag.Categories));
 var catArray2 = @Html.Raw(Json.Serialize(ViewBag.Category));
 var ctx = $("#bar_chart");
 var catChart = new Chart(ctx, {
-    type: 'pie',
+    type: 'bar',
     data: {
         labels: catArray2,
         datasets: [{
@@ -30,4 +37,27 @@ var catChart = new Chart(ctx, {
         maintainAspectRatio: false
     }
 });
+
+@*Location Graph*@
+var locArray = @Html.Raw(Json.Serialize(ViewBag.Locations));
+var locArray2 = @Html.Raw(Json.Serialize(ViewBag.Location));
+var ctx2 = $("#bar_chart2");
+var catChart2 = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: locArray2,
+        datasets: [{
+            label: "Bar Chart",
+            data: locArray,
+            borderWidth: 1
+        }]
+    },
+    myOptions: {
+        maintainAspectRatio: false
+    }
+});
 </script>
+}
+else{
+    <h1>YOU HAVE NO PERMISSION TO ACCESS THIS SITE! PLEASE CONTACT YOUR ADMINISTRATOR</h1>
+}

@@ -3,7 +3,8 @@
     public interface ICase
     {
         Pagination<Case> GetItems(string SortProperty, SortOrder sortOrder, string SearchText = "", int pageIndex = 1, int pageSize = 5);
-        public List<Case> GetAllItems();
+        public List<Case> GetCategiores();
+        public List<Case> GetLocations();
         Case GetItem(string Code);
         Case Create(Case unit);
         Case Edit(Case unit);

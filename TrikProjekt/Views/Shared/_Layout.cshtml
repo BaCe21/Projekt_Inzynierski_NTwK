@@ -65,24 +65,24 @@
                         </li>
                         </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white target" asp-area="" asp-controller="Case" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white target2" asp-area="" asp-controller="Case2" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases - mobile</a>
+                        </li>
                             @if (Admins.admins.Contains(@UserManager.GetUserName(User)))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-white target" asp-area="" asp-controller="Case" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white target2" asp-area="" asp-controller="Case2" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases - mobile</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-share-nodes fa-lg mr-1"></i>Machine Learning</a>
                                 </li>
-                            }
-                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-image fa-lg mr-1"></i>Images</a>
-                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Case" asp-action="ShowCaseData"><i class="fa-solid fa-chart-pie fa-lg mr-1"></i>Statistics</a>
-                        </li>   
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-image fa-lg mr-1"></i>Images</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Case" asp-action="ShowCaseData"><i class="fa-solid fa-chart-pie fa-lg mr-1"></i>Statistics</a>
+                                </li>  
+                            } 
                         }
                     </ul>
                     <partial name="_LoginPartial" />
@@ -101,7 +101,7 @@
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>    
                         <div id="MySuccessBody" class="modal-body alert alert-success">
-                            Pełen sukces B)
+                            Pełen sukces 
                         </div>
                         <div class="modal-footer">
                             &nbsp;
