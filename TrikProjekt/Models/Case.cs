@@ -32,36 +32,43 @@ namespace TrikProjekt56.Models
         public int? LocationId { get; set; }
         public virtual Location Locations { get; set; }
 
+        [Required]
         [ForeignKey("Ages")]
         [Display(Name = "Age")]
         public int? AgeId { get; set; }
         public virtual Age Ages { get; set; }
 
+        [Required]
         [ForeignKey("Hairs")]
         [Display(Name = "Hair")]
         public int? HairId { get; set; }
         public virtual Hair Hairs { get; set; }
 
-        [ForeignKey("DistFeatures")]
-        [Display(Name = "DistFeature")]
-        public int? DistFeatureId { get; set; }
-        public virtual DistFeature DistFeatures { get; set; }
+        [Required]
+        [ForeignKey("Genders")]
+        [Display(Name = "Gender")]
+        public int? GenderId { get; set; }
+        public virtual Gender Genders { get; set; }
 
-        [ForeignKey("Corpses")]
-        [Display(Name = "Other")]
-        public int? CorpseId { get; set; }
-        public virtual Corpse Corpses { get; set; }
+        [Required]
+        [ForeignKey("Religions")]
+        [Display(Name = "Religion")]
+        public int? ReligionId { get; set; }
+        public virtual Religion Religions { get; set; }
 
+        [Required]
         [ForeignKey("Educations")]
         [Display(Name = "Education")]
         public int? EducationId { get; set; }
         public virtual Education Educations { get; set; }
 
+        [Required]
         [ForeignKey("Heights")]
         [Display(Name = "Height")]
         public int? HeightId { get; set; }
         public virtual Height Heights { get; set; }
 
+        [Required]
         [ForeignKey("Weights")]
         [Display(Name = "Weight")]
         public int? WeightId { get; set; }

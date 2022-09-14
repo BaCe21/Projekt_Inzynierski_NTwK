@@ -5,24 +5,46 @@
 @{
     ViewData["Title"] = "Dashboard";
 }
-<script
-  src="https://code.jquery.com/jquery-3.6.1.min.js"
-  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @if (Admins.admins.Contains(@UserManager.GetUserName(User)))
 {
-<div id="chart_container">
-    <canvas id="bar_chart"></canvas>
+
+<div id="chartscontainer">
+    <div id="chart_category">
+        <canvas id="chartcategory"></canvas>
+    </div>
+    <div id="chart_location">
+        <canvas id="chartlocation"></canvas>
+    </div>
+    <div id="chart_age">
+        <canvas id="chartage"></canvas>
+    </div>
+    <div id="chart_hair">
+        <canvas id="charthair"></canvas>
+    </div>
+    <div id="chart_gender">
+        <canvas id="chartgender"></canvas>
+    </div>
+    <div id="chart_religion">
+        <canvas id="chartreligion"></canvas>
+    </div>
+    <div id="chart_education">
+        <canvas id="charteducation"></canvas>
+    </div>
+    <div id="chart_height">
+        <canvas id="chartheight"></canvas>
+    </div>
+    <div id="chart_weight">
+        <canvas id="chartweight"></canvas>
+    </div>
 </div>
-<div id="chart_container2">
-    <canvas id="bar_chart2"></canvas>
-</div>
+
 <script>
 @*Category Graph*@
 var catArray = @Html.Raw(Json.Serialize(ViewBag.Categories));
 var catArray2 = @Html.Raw(Json.Serialize(ViewBag.Category));
-var ctx = $("#bar_chart");
+var ctx = $("#chartcategory");
 var catChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -41,8 +63,8 @@ var catChart = new Chart(ctx, {
 @*Location Graph*@
 var locArray = @Html.Raw(Json.Serialize(ViewBag.Locations));
 var locArray2 = @Html.Raw(Json.Serialize(ViewBag.Location));
-var ctx2 = $("#bar_chart2");
-var catChart2 = new Chart(ctx2, {
+var ctx2 = $("#chartlocation");
+var locChart = new Chart(ctx2, {
     type: 'bar',
     data: {
         labels: locArray2,
@@ -56,6 +78,140 @@ var catChart2 = new Chart(ctx2, {
         maintainAspectRatio: false
     }
 });
+
+@*Age Graph*@
+var ageArray = @Html.Raw(Json.Serialize(ViewBag.Ages));
+var ageArray2 = @Html.Raw(Json.Serialize(ViewBag.Age));
+var ctx3 = $("#chartage");
+var ageChart = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+        labels: ageArray2,
+        datasets: [{
+            label: "Bar Chart",
+            data: ageArray,
+            borderWidth: 1
+        }]
+    },
+    myOptions: {
+        maintainAspectRatio: false
+    }
+});
+
+@*Hair Graph*@
+var hairArray = @Html.Raw(Json.Serialize(ViewBag.Hairs));
+var hairArray2 = @Html.Raw(Json.Serialize(ViewBag.Hair));
+var ctx4 = $("#charthair");
+var hairChart = new Chart(ctx4, {
+    type: 'bar',
+    data: {
+        labels: hairArray2,
+        datasets: [{
+            label: "Bar Chart",
+            data: hairArray,
+            borderWidth: 1
+        }]
+    },
+    myOptions: {
+        maintainAspectRatio: false
+    }
+});
+
+@*Gender Graph*@
+var genArray = @Html.Raw(Json.Serialize(ViewBag.Genders));
+var genArray2 = @Html.Raw(Json.Serialize(ViewBag.Gender));
+var ctx5 = $("#chartgender");
+var genderChart = new Chart(ctx5, {
+    type: 'bar',
+    data: {
+        labels: genArray2,
+        datasets: [{
+            label: "Bar Chart",
+            data: genArray,
+            borderWidth: 1
+        }]
+    },
+    myOptions: {
+        maintainAspectRatio: false
+    }
+});
+
+@*Religion Graph*@
+var relArray = @Html.Raw(Json.Serialize(ViewBag.Religions));
+var relArray2 = @Html.Raw(Json.Serialize(ViewBag.Religion));
+var ctx6 = $("#chartreligion");
+var religionChart = new Chart(ctx6, {
+    type: 'bar',
+    data: {
+        labels: relArray2,
+        datasets: [{
+            label: "Bar Chart",
+            data: relArray,
+            borderWidth: 1
+        }]
+    },
+    myOptions: {
+        maintainAspectRatio: false
+    }
+});
+
+@*Education Graph*@
+var eduArray = @Html.Raw(Json.Serialize(ViewBag.Educations));
+var eduArray2 = @Html.Raw(Json.Serialize(ViewBag.Education));
+var ctx7 = $("#charteducation");
+var educationChart = new Chart(ctx7, {
+    type: 'bar',
+    data: {
+        labels: eduArray2,
+        datasets: [{
+            label: "Bar Chart",
+            data: eduArray,
+            borderWidth: 1
+        }]
+    },
+    myOptions: {
+        maintainAspectRatio: false
+    }
+});
+
+@*Height Graph*@
+var heiArray = @Html.Raw(Json.Serialize(ViewBag.Heights));
+var heiArray2 = @Html.Raw(Json.Serialize(ViewBag.Height));
+var ctx8 = $("#chartheight");
+var heightChart = new Chart(ctx8, {
+    type: 'bar',
+    data: {
+        labels: heiArray2,
+        datasets: [{
+            label: "Bar Chart",
+            data: heiArray,
+            borderWidth: 1
+        }]
+    },
+    myOptions: {
+        maintainAspectRatio: false
+    }
+});
+
+@*Weight Graph*@
+var weiArray = @Html.Raw(Json.Serialize(ViewBag.Weights));
+var weiArray2 = @Html.Raw(Json.Serialize(ViewBag.Weight));
+var ctx9 = $("#chartweight");
+var weightChart = new Chart(ctx9, {
+    type: 'bar',
+    data: {
+        labels: weiArray2,
+        datasets: [{
+            label: "Bar Chart",
+            data: weiArray,
+            borderWidth: 1
+        }]
+    },
+    myOptions: {
+        maintainAspectRatio: false
+    }
+});
+
 </script>
 }
 else{

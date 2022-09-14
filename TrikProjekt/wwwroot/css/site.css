@@ -118,10 +118,12 @@ body {
     margin-bottom: 0px !important;
 }
 
+/* Scrollbar visibility */
 ::-webkit-scrollbar {
     display: none;
 }
 
+/* Checkbox format for index list */
 input[type=checkbox]{
     display: block;
     width: 20px;
@@ -135,6 +137,7 @@ input[type=checkbox]{
     height: 12px !important;
 }
 
+/* Case/Case mobile switch */
 @media all and (max-width: 600px) {
     .target {
         display: none;
@@ -146,29 +149,71 @@ input[type=checkbox]{
     }
 }
 
+/* Table row animation */
 table.shadowtable tr:hover td {
     background-color: #FEFEFE;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
+/* Table bottom text sizing (showing x of x pages etc) */
 .bottomtext {
     margin-top:5px !important;
     font-size: 1.1rem !important;
     line-height: 1rem !important;
 }
 
+/* Navbar hover animation */
 nav div ul li a:hover {
     background-color: red;
     transition: all 0.5s;
 }
 
 /*GRAPHS*/
-#chart_container {
+#chartscontainer {
+    background-color: white;
+    border: 5px solid black;
+}
+#chart_category {
     width: 400px;
     height: 200px;
     border: 1px solid #ddd;
 }
-#chart_container2 {
+#chart_location {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+#chart_age {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+#chart_hair {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+#chart_gender {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+#chart_religion {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+#chart_education {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+#chart_height {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+#chart_weight {
     width: 400px;
     height: 200px;
     border: 1px solid #ddd;

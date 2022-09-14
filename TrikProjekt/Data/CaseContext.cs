@@ -11,8 +11,8 @@
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Age> Ages { get; set; }
         public virtual DbSet<Hair> Hairs { get; set; }
-        public virtual DbSet<DistFeature> DistFeatures { get; set; }
-        public virtual DbSet<Corpse> Corpses { get; set; }
+        public virtual DbSet<Gender> Genders { get; set; }
+        public virtual DbSet<Religion> Religions { get; set; }
         public virtual DbSet<Education> Educations { get; set; }
         public virtual DbSet<Height> Heights { get; set; }
         public virtual DbSet<Weight> Weights { get; set; }

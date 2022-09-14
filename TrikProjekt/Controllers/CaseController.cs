@@ -6,11 +6,11 @@
         private void AddViewbags()
         {
             ViewBag.Categories = GetCategories();
-            ViewBag.Features = GetDistFeatures();
+            ViewBag.Genders = GetGenders();
             ViewBag.Locations = GetLocations();
             ViewBag.Ages = GetAges();
             ViewBag.Hairs = GetHairs();
-            ViewBag.Corpses = GetCorpses();
+            ViewBag.Religions = GetReligions();
             ViewBag.Educations = GetEducations();
             ViewBag.Heights = GetHeights();
             ViewBag.Weights = GetWeights();
@@ -21,21 +21,21 @@
         private readonly ILocation _locationrepo;
         private readonly IAge _agerepo;
         private readonly IHair _hairrepo;
-        private readonly IFeature _featurerepo;
-        private readonly ICorpse _corpserepo;
+        private readonly IGender _genderrepo;
+        private readonly IReligion _religionrepo;
         private readonly IEducation _educationrepo;
         private readonly IWeight _weightrepo;
         private readonly IHeight _heightrepo;
 
-        public CaseController(ICase repo, ICategory categoryrepo, ILocation locationrepo, IAge agerepo, IHair hairrepo, IFeature featurerepo, ICorpse corpserepo, IEducation educationrepo, IWeight weightrepo, IHeight heightrepo)
+        public CaseController(ICase repo, ICategory categoryrepo, ILocation locationrepo, IAge agerepo, IHair hairrepo, IGender genderrepo, IReligion religionrepo, IEducation educationrepo, IWeight weightrepo, IHeight heightrepo)
         {
             _repo = repo;
             _categoryrepo = categoryrepo;
             _locationrepo = locationrepo;
             _agerepo = agerepo;
             _hairrepo = hairrepo;
-            _featurerepo = featurerepo;
-            _corpserepo = corpserepo;
+            _genderrepo = genderrepo;
+            _religionrepo = religionrepo;
             _educationrepo = educationrepo;
             _heightrepo = heightrepo;
             _weightrepo = weightrepo;
@@ -66,6 +66,91 @@
             }
             ViewBag.Location = loclabel;
             ViewBag.Locations = locdata;
+
+            //Age data
+            List<Case> ageitems = _repo.GetAges();
+            var agelabel = ageitems.Select(l => l.Ages.Name).Distinct().ToList();
+            List<int> agedata = new List<int>();
+            var counter3 = ageitems.Select(x => x.Ages).Distinct();
+            foreach (var age in counter3)
+            {
+                agedata.Add(ageitems.Count(x => x.Ages == age));
+            }
+            ViewBag.Age = agelabel;
+            ViewBag.Ages = agedata;
+
+
+            //Hair data
+            List<Case> hairitems = _repo.GetHairs();
+            var hairlabel = hairitems.Select(l => l.Hairs.Name).Distinct().ToList();
+            List<int> hairdata = new List<int>();
+            var counter4 = hairitems.Select(x => x.Hairs).Distinct();
+            foreach (var hair in counter4)
+            {
+                hairdata.Add(hairitems.Count(x => x.Hairs == hair));
+            }
+            ViewBag.Hair = hairlabel;
+            ViewBag.Hairs = hairdata;
+
+            //Gender data
+            List<Case> genitems = _repo.GetGenders();
+            var genlabel = genitems.Select(l => l.Genders.Name).Distinct().ToList();
+            List<int> gendata = new List<int>();
+            var counter5 = genitems.Select(x => x.Genders).Distinct();
+            foreach (var gender in counter5)
+            {
+                gendata.Add(genitems.Count(x => x.Genders == gender));
+            }
+            ViewBag.Gender = genlabel;
+            ViewBag.Genders = gendata;
+
+            //Religion data
+            List<Case> relitems = _repo.GetReligions();
+            var rellabel = relitems.Select(l => l.Religions.Name).Distinct().ToList();
+            List<int> reldata = new List<int>();
+            var counter6 = relitems.Select(x => x.Religions).Distinct();
+            foreach (var religion in counter6)
+            {
+                reldata.Add(relitems.Count(x => x.Religions == religion));
+            }
+            ViewBag.Religion = rellabel;
+            ViewBag.Religions = reldata;
+
+            //Education data
+            List<Case> eduitems = _repo.GetEducations();
+            var edulabel = eduitems.Select(l => l.Educations.Name).Distinct().ToList();
+            List<int> edudata = new List<int>();
+            var counter7 = eduitems.Select(x => x.Educations).Distinct();
+            foreach (var education in counter7)
+            {
+                edudata.Add(eduitems.Count(x => x.Educations == education));
+            }
+            ViewBag.Education = edulabel;
+            ViewBag.Educations = edudata;
+
+            //Height data
+            List<Case> heiitems = _repo.GetHeights();
+            var heilabel = heiitems.Select(l => l.Heights.Name).Distinct().ToList();
+            List<int> heidata = new List<int>();
+            var counter8 = heiitems.Select(x => x.Heights).Distinct();
+            foreach (var height in counter8)
+            {
+                heidata.Add(heiitems.Count(x => x.Heights == height));
+            }
+            ViewBag.Height = heilabel;
+            ViewBag.Heights = heidata;
+
+            //Weight data
+            List<Case> weiitems = _repo.GetWeights();
+            var weilabel = weiitems.Select(l => l.Weights.Name).Distinct().ToList();
+            List<int> weidata = new List<int>();
+            var counter9 = weiitems.Select(x => x.Weights).Distinct();
+            foreach (var weight in counter9)
+            {
+                weidata.Add(weiitems.Count(x => x.Weights == weight));
+            }
+            ViewBag.Weight = weilabel;
+            ViewBag.Weights = weidata;
 
             //Generate View
             return View();
@@ -309,10 +394,10 @@
             IsUnits.Insert(0, defaultitem);
             return IsUnits;
         }
-        private List<SelectListItem> GetDistFeatures()
+        private List<SelectListItem> GetGenders()
         {
             var IsUnits = new List<SelectListItem>();
-            Pagination<DistFeature> items = _featurerepo.GetItems("Name", SortOrder.Ascending, "", 1, 1000);
+            Pagination<Gender> items = _genderrepo.GetItems("Name", SortOrder.Ascending, "", 1, 1000);
             IsUnits = items.Select(u => new SelectListItem()
             {
                 Value = u.Id.ToString(),
@@ -321,15 +406,15 @@
             var defaultitem = new SelectListItem()
             {
                 Value = "",
-                Text = "Select distinguish feature"
+                Text = "Select distinguish gender"
             };
             IsUnits.Insert(0, defaultitem);
             return IsUnits;
         }
-        private List<SelectListItem> GetCorpses()
+        private List<SelectListItem> GetReligions()
         {
             var IsUnits = new List<SelectListItem>();
-            Pagination<Corpse> items = _corpserepo.GetItems("Name", SortOrder.Ascending, "", 1, 1000);
+            Pagination<Religion> items = _religionrepo.GetItems("Name", SortOrder.Ascending, "", 1, 1000);
             IsUnits = items.Select(u => new SelectListItem()
             {
                 Value = u.Id.ToString(),
@@ -338,7 +423,7 @@
             var defaultitem = new SelectListItem()
             {
                 Value = "",
-                Text = "Select other/body"
+                Text = "Select religion"
             };
             IsUnits.Insert(0, defaultitem);
             return IsUnits;

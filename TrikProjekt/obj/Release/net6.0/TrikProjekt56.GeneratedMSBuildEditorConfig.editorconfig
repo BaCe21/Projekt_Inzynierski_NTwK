@@ -8,297 +8,297 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TrikProjekt56
 build_property.RootNamespace = TrikProjekt56
-build_property.ProjectDir = C:\Users\dzuni\Desktop\TrikProjekt56\TrikProjekt56\
+build_property.ProjectDir = C:\Users\dzuni\Desktop\TrikProjekt\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\dzuni\Desktop\TrikProjekt56\TrikProjekt56
+build_property.MSBuildProjectDirectory = C:\Users\dzuni\Desktop\TrikProjekt
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Age/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Age/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Age/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Age/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Age/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Age/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Age/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Age/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Age/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Age/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case2/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case2/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZTJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case2/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case2/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZTJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case2/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case2/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZTJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case2/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case2/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZTJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case2/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case2/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZTJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Case/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Case/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FzZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Category/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Category/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Category/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Category/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Category/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Category/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Corpse/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Corpse/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Corpse/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Corpse/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNlXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Corpse/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Corpse/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Corpse/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Corpse/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Corpse/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Corpse/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29ycHNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Education/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Education/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Education/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Education/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Education/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Education/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Education/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Education/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Education/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Education/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Feature/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Feature/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Feature/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Feature/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Feature/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Feature/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Feature/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Feature/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Feature/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Feature/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Hair/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Hair/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFpclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Hair/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Hair/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFpclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Hair/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Hair/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFpclxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Hair/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Hair/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFpclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Hair/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Hair/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFpclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Height/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Height/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVpZ2h0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Height/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Height/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVpZ2h0XERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Height/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Height/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVpZ2h0XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Height/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Height/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVpZ2h0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Height/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Height/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVpZ2h0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Home/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Home/Privacy.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Location/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Location/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Location/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Location/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Location/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Location/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Location/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Location/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Location/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Location/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Shared/BottomBar.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Shared/BottomBar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEJvdHRvbUJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Shared/Error.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Shared/TopBar.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Shared/TopBar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFRvcEJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Shared/_Layout.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Weight/Create.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Weight/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2VpZ2h0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Weight/Delete.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Weight/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2VpZ2h0XERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Weight/Details.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Weight/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2VpZ2h0XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Weight/Edit.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Weight/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2VpZ2h0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/Weight/Index.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/Weight/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2VpZ2h0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/_ViewImports.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dzuni/Desktop/TrikProjekt56/TrikProjekt56/Views/_ViewStart.cshtml]
+[C:/Users/dzuni/Desktop/TrikProjekt/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

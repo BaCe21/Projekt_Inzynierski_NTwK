@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gY2/Zv7DD0nd0y43yHvcNBoBVoBb6F4+tYemvZCm/EH5rQKflBuOD8EtWl7MaZn2W3EhPsutCZ2Zq//gccDqcw==",
+  "dgSpecHash": "oIBvw9g5ngf+UXGLmlkNGxVEUdrxgDmvBsGymL14Tt1HKdE7rhShKQlh7sgiQOV0Z/seorjvI7AAF6ZnpKg25A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dzuni\\Desktop\\TrikProjekt56\\TrikProjekt56\\TrikProjekt56.csproj",
+  "projectFilePath": "C:\\Users\\dzuni\\Desktop\\TrikProjekt\\TrikProjekt\\TrikProjekt56.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dzuni\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\dzuni\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

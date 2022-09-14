@@ -111,6 +111,48 @@
             items = _context.Cases.Include(u => u.Locations).ToList();
             return items;
         }
+        public List<Case> GetAges()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(u => u.Ages).ToList();
+            return items;
+        }
+        public List<Case> GetHairs()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(u => u.Hairs).ToList();
+            return items;
+        }
+        public List<Case> GetGenders()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(u => u.Genders).ToList();
+            return items;
+        }
+        public List<Case> GetReligions()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(u => u.Religions).ToList();
+            return items;
+        }
+        public List<Case> GetEducations()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(u => u.Educations).ToList();
+            return items;
+        }
+        public List<Case> GetHeights()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(u => u.Heights).ToList();
+            return items;
+        }
+        public List<Case> GetWeights()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(u => u.Weights).ToList();
+            return items;
+        }
         public bool IsExisting(string name)
         {
             int ct = _context.Cases.Where(n => n.Name.ToLower() == name.ToLower()).Count();
