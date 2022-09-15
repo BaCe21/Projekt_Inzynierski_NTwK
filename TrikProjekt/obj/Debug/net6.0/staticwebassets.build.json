@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IYWiDAaqLSBKKKtr+YMUOEwVGg0AEczWR5u2f9CgtMQ=",
+  "Hash": "0KXyO/DgnXoULbQfO4oFMaLJADMNUFxS02+cH81zpzA=",
   "Source": "TrikProjekt56",
   "BasePath": "_content/TrikProjekt56",
   "Mode": "Default",
@@ -1086,6 +1086,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\baner.png"
+    },
+    {
+      "Identity": "C:\\Users\\dzuni\\Desktop\\TrikProjekt\\TrikProjekt\\wwwroot\\img\\deleteImage.png",
+      "SourceId": "TrikProjekt56",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\dzuni\\Desktop\\TrikProjekt\\TrikProjekt\\wwwroot\\",
+      "BasePath": "_content/TrikProjekt56",
+      "RelativePath": "img/deleteImage.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\deleteImage.png"
     },
     {
       "Identity": "C:\\Users\\dzuni\\Desktop\\TrikProjekt\\TrikProjekt\\wwwroot\\img\\hip-square.png",

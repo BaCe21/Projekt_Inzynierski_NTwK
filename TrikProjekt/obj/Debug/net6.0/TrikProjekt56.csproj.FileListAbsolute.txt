@@ -2763,3 +2763,8 @@ C:\Users\dzuni\Desktop\TrikProjekt\TrikProjekt\obj\Debug\net6.0\scopedcss\bundle
 C:\Users\dzuni\Desktop\TrikProjekt\TrikProjekt\obj\Debug\net6.0\TrikProjekt56.csproj.CopyComplete
 C:\Users\dzuni\Desktop\TrikProjekt\TrikProjekt\obj\Debug\net6.0\TrikProjekt56.genruntimeconfig.cache
 C:\Users\dzuni\Desktop\TrikProjekt\TrikProjekt\obj\Debug\net6.0\ref\TrikProjekt56.dll
+C:\Users\dzuni\Desktop\TrikProjekt\TrikProjekt\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\dzuni\Desktop\TrikProjekt\TrikProjekt\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\Users\dzuni\Desktop\TrikProjekt\TrikProjekt\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\Users\dzuni\Desktop\TrikProjekt\TrikProjekt\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\Users\dzuni\Desktop\TrikProjekt\TrikProjekt\bin\Debug\net6.0\System.Memory.Data.dll
