@@ -169,52 +169,112 @@ nav div ul li a:hover {
 }
 
 /*GRAPHS*/
-#chartscontainer {
-    background-color: white;
-    border: 5px solid black;
+
+.chartscontainer {
+    margin-top: 25px !important;
+    border: 3px solid #333333;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    letter-spacing: 0.3ch;
+    background: #ffffff;
+    position: relative;
+}
+.chartscontainer::before {
+    content: '';
+    border: 2px solid #353535;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
 }
 #chart_category {
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
 }
 #chart_location {
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
 }
 #chart_age {
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
 }
 #chart_hair {
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
 }
 #chart_gender {
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
 }
 #chart_religion {
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
 }
 #chart_education {
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
 }
 #chart_height {
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
 }
 #chart_weight {
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
+}
+
+/*BLOBS*/
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    }
+
+.deleteDiv {
+    position: relative;
+    top: -160px;
+    left: 130px;
+    width: 30px;
+    height: 30px;
+}
+
+.imageBlock {
+    display: inline-block;
+}
+
+.thumb {
+    width: 159px;
+    height: 159px;
+}
+
+.deleteIcon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
 }
