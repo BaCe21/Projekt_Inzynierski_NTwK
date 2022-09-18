@@ -5,144 +5,188 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="TrikProjekt56">
+    <meta name="author" content="TrikTeam">
     <title>@ViewData["Title"] - TrikProjekt56</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/plugins/themefisher-font/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/plugins/bootstrap/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/plugins/animate-css/animate.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/plugins/magnific-popup/dist/magnific-popup.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/plugins/slick-carousel/slick.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/plugins/slick-carousel/slick-theme.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
-                    <i class="fa-solid fa-3 fa-lg mr-1"></i><i class="fa-solid fa-k fa-lg mr-1"></i><i class="fa-solid fa-magic-wand-sparkles fa-lg mr-1"></i></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1 justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house fa-lg mr-1"></i>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fa-solid fa-key fa-lg mr-1"></i>Privacy</a>
-                        </li>
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                        <li class="dropdown nav-item">
-                            <a class="nav-link dropdown-toggle text-white" aria-expanded="true" aria-haspopup="true" data-toggle="dropdown">
-                                <i class="fa-brands fa-buffer fa-lg mr-1"></i>Modules
-                            </a>
-                        <ul class="dropdown-menu myBackground">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="Index">Locations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Age" asp-action="Index">Age</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Hair" asp-action="Index">Hair</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Gender" asp-action="Index">Gender</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Religion" asp-action="Index">Religion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Education" asp-action="Index">Education</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Height" asp-action="Index">Height</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Weight" asp-action="Index">Weight</a>
-                        </li>
-                        </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white target" asp-area="" asp-controller="Case" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white target2" asp-area="" asp-controller="Case2" asp-action="Index"><i class="fa-solid fa-list fa-lg mr-1"></i>Cases - mobile</a>
-                        </li>
-                            @if (Admins.admins.Contains(@UserManager.GetUserName(User)))
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-share-nodes fa-lg mr-1"></i>Machine Learning</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Blob" asp-action="Index"><i class="fa-solid fa-image fa-lg mr-1"></i>Images</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-controller="Case" asp-action="ShowCaseData"><i class="fa-solid fa-chart-pie fa-lg mr-1"></i>Statistics</a>
-                                </li>  
-                            } 
-                        }
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" style="padding-bottom: 3rem!important;">
-            <!--Dialog sukces-->
-            <div id="mySuccess" class="modal fade text-width: 30%;" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2>Info</h2>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>    
-                        <div id="MySuccessBody" class="modal-body alert alert-success">
-                            Pełen sukces 
-                        </div>
-                        <div class="modal-footer">
-                            &nbsp;
-                            <button type="button" class="btn btn-info" data-dismiss="modal">Zamknij</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Dialog sukces koniec-->
-            <!--Dialog error start-->
-            <div id="myError" class="modal fade text-width:30%;" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2>Error</h2>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div id="MyErrorBody" class="modal-body alert alert-danger">
-                            this is a modal body. our message will appear here.
-                        </div>
-                        <div class="modal-footer">
-                            &nbsp;
-                            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!--Dialog error koniec-->
-            @RenderBody()
-        </main>
+<body id="home" data-spy="scroll" data-target=".navbar-nav" data-offset="80">
+    <!--Start Preloader====================================-->
+    <div class="preloader">
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+        </div>
     </div>
-    <footer class="footer text-center text-white fixed-bottom bg-dark">
-      <div>
-        © 2022 Copyright:
-        <a class="text-white" href="https://trikapp.azurewebsites.net/">TrikProject</a>
-      </div>
+    <!-- End Preloader====================================-->
+    <!-- Navigation=======================================-->
+    <header id="navigation" class="navigation">
+        <div class="container">
+            <div class="navbar-header w-100">
+                <nav class="navbar navbar-expand-lg navbar-dark px-0">
+                    <!-- logo -->
+                    <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-3 fa-sm mr-1"></i><i class="fa-solid fa-k fa-sm mr-1"></i><i class="fa-solid fa-magic-wand-sparkles fa-sm mr-1"></i></a>
+                    <!-- /logo -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar01"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar01">
+                        <ul class="navbar-nav navigation-menu ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fa-solid fa-key fa-sm mr-1"></i>Privacy</a>
+                            </li>
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <li class="dropdown nav-item">
+                                    <a class="nav-link dropdown-toggle text-white" aria-expanded="true" aria-haspopup="true" data-toggle="dropdown">
+                                    <i class="fa-brands fa-buffer fa-sm mr-1"></i>Modules
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="Index">Locations</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Age" asp-action="Index">Age</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Hair" asp-action="Index">Hair</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Gender" asp-action="Index">Gender</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Religion" asp-action="Index">Religion</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Education" asp-action="Index">Education</a>
+                                        </li>
+                                        <li class="nav-item">
+                                           <a class="nav-link text-dark" asp-area="" asp-controller="Height" asp-action="Index">Height</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Weight" asp-action="Index">Weight</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white target" asp-area="" asp-controller="Case" asp-action="Index"><i class="fa-solid fa-list fa-sm mr-1"></i>Cases</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white target2" asp-area="" asp-controller="Case2" asp-action="Index"><i class="fa-solid fa-list fa-sm mr-1"></i>Cases - mobile</a>
+                                </li>
+                                @if (Admins.admins.Contains(@UserManager.GetUserName(User)))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="" asp-action="Index"><i class="fa-solid fa-share-nodes fa-sm mr-1"></i>Machine Learning</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="Blob" asp-action="Index"><i class="fa-solid fa-image fa-sm mr-1"></i>Images</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="Case" asp-action="ShowCaseData"><i class="fa-solid fa-chart-pie fa-sm mr-1"></i>Statistics</a>
+                                    </li>
+                                }
+                            }
+                            <partial name="_LoginPartial" />
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- End Navigation====================================-->
+    <!-- Main==============================================-->
+    <main role="main">
+        <!--Dialog sukces-->
+        <div id="mySuccess" class="modal fade text-width: 30%;" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Info</h2>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div id="MySuccessBody" class="modal-body alert alert-success">
+                        Success
+                    </div>
+                    <div class="modal-footer">
+                        &nbsp;
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Dialog sukces end-->
+        <!--Dialog error start-->
+        <div id="myError" class="modal fade text-width:30%;" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Error</h2>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div id="MyErrorBody" class="modal-body alert alert-danger">
+                        Error
+                    </div>
+                    <div class="modal-footer">
+                        &nbsp;
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Dialog error end-->
+        @RenderBody()
+    </main>
+    <!-- End Main=========================================-->
+    <!-- Footer===========================================-->
+    <footer class="footer text-white text-center fixed-bottom bg-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 mt-4">
+                    <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Designed &amp; Developed by TrikTeam.</p>
+                </div>
+                <div class="col-4 social-icon">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="https://facebook.com/"><i class="tf-ion-social-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/"><i class="tf-ion-social-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://pinterest.com/"><i class="tf-ion-social-pinterest-outline"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- End footer=======================================-->
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/plugins/jquery/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/plugins/bootstrap/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/plugins/slick-carousel/slick.min.js" asp-append-version="true"></script>
+    <script src="~/plugins/filterzr/jquery.filterizr.min.js" asp-append-version="true"></script>
+    <script src="~/plugins/magnific-popup/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+    <script src="~/plugins/google-map/gmap.js" asp-append-version="true"></script>
+    <script src="~/plugins/wow/wow.min.js" asp-append-version="true"></script>
+    <script src="~/js/script.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

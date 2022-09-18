@@ -9,12 +9,12 @@
         border-color:red;
     }
 </style>
-<div class="container btn-group" style="background-color:darkgrey; height:45px; border-radius:15px 15px 0px 0px;">
+<div class="container btn-group" style="background-color:darkgrey; height:65px; border-radius:15px 15px 0px 0px;">
     <div class="col-4 p-0 justify-content-end mt-2">
     <form asp-action="Index">
         <p class="btn-group">
             <input class="form-contol" type="text" name="SearchText" placeholder="Enter Text" style="width: 5rem !important;" value="@ViewBag.SearchText"/>
-            <span class="ml-2 btn-group btn-danger" style="border-radius:15px;">
+            <span class="ml-2 btn-group btn-danger target" style="border-radius:15px;">
                 <i class="pl-2 fa fa-search align-self-center" aria-hidden="true"></i>
                 <input class="btn btn-sm text-white" type="submit" value="Search"/>
             </span>
