@@ -1,8 +1,5 @@
 /**
  * WEBSITE: https://themefisher.com
- * TWITTER: https://twitter.com/themefisher
- * FACEBOOK: https://www.facebook.com/themefisher
- * GITHUB: https://github.com/themefisher/
  */
 
 /*=== MEDIA QUERY ===*/
@@ -12,7 +9,6 @@ html {
   background-color: #353b43;
   color: #737f8a;
 }
-
 .Index {
     left: 0px;
     min-height: 90%;
@@ -31,6 +27,40 @@ html {
 ::-webkit-scrollbar {
     display: none;
 }
+
+.topBar {
+    background-image: url('../img/denim.png');
+    height: 65px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.topInput {
+    width: 8rem !important;
+    height: 45px;
+    border-radius: 10px;
+}
+
+.page-link {
+    border: 1px solid;
+    height: 45px;
+    width: 45px;
+}
+
+@media all and (max-width: 600px) {
+    .page-link {
+        margin-top: 5px;
+        border: 1px solid;
+        height: 35px;
+        width: 35px;
+    }
+    .topInput {
+        margin-top: 5px;
+        width: 5rem !important;
+        height: 35px;
+        border-radius: 10px;
+    }
+}
+
 
 .myButton {
     color: #007bff !important;
@@ -638,7 +668,6 @@ a:hover {
 }
 
 .pagination li {
-  margin: 5px;
   display: inline-block;
 }
 .pagination li a {

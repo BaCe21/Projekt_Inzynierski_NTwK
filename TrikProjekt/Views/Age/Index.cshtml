@@ -5,17 +5,16 @@
     SiteModel site = ViewBag.Site;
 }
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<div class="container-fluid btn-group">
-    <div class="col-10">
-        <h2>Age</h2>
-    </div>
-    <div class="col-2 justify-content-end">
-        <p>
-            <a asp-action="Create" class="btn btn-primary">Create new</a>
-        </p>
+<div class="container mainSystemCollection mt-3 mb-2">
+    <div class = "row">
+        <div class="col-sm">
+            <a class="btn ml-1" asp-area="" asp-controller="Age" asp-action="Index" style="font-size: 20px;">Age</a>
+        </div>
+        <div class="col-sm justify-content-end">
+                <a asp-action="Create" class="btn" style="float: right; font-size: 20px;" >Create new</a>
+        </div>
     </div>
 </div>
-
 <div class="container mainSystemCollection">
     <div class="row">
             <partial name="TopBar" model="@site" />
