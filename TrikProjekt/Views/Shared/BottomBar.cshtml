@@ -1,22 +1,19 @@
 ﻿@model SiteModel
 
-<div class = "container m-0 p-0 btn-group" style="background-color:darkgrey; border-radius:0px 0px 15px 15px; color:white; height: 45px;">
+<div class = "container m-0 p-0 btn-group bottomBar">
     <div class="col-4 btn-group p-1 m-1">
         <p class="bottomtext">
             Showing @Model.StartRecord to @Model.EndRecord of @Model.Items Rows
         </p>
     </div>
-    <div class="col-4 btn-group p-1 m-1 justify-content-center">
-        <p class="bottomtext">
-            Rows/Page
-        </p>
+    <div class="col-2 btn-group p-1 m-1 justify-content-center">
         <p class="p-1 ml-1">
-                <select class="form-control" id="pageSelector" style="margin-top:-5px !important; width:2rem;" asp-items="Model.GetPageSizes()"
+                <select class="form-control" id="pageSelector" style="margin-top:-5px !important;" asp-items="Model.GetPageSizes()"
                     onchange = "ChangePageSize(this)";>
                 </select>
         </p>
     </div>
-    <div class="col-4 btn-group p-1 m-1 justify-content-center">
+    <div class="col-4 btn-group p-1 m-1 justify-content-end">
         <p class="bottomtext">
             Showing @Model.CurrentPage / @Model.TotalPages Pages
         </p>

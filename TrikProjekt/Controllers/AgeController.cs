@@ -175,24 +175,36 @@
         [HttpPost]
         public IActionResult Delete(Age item)
         {
+            bool myBool = false;
+            string errMessage = "";
             try
             {
-                item = _repo.Delete(item);
+                if (errMessage == "")
+                {
+                    item = _repo.Delete(item);
+                    TempData["SuccessMessage"] = item.Name + " deleted successfully!";
+                    myBool = true;
+                }
             }
             catch (Exception exc)
             {
-                string errMessage = exc.Message;
-                TempData["ErrorMessage"] = errMessage;
-                ModelState.AddModelError("", errMessage);
-                return View(item);
+                errMessage += " " + exc.Message;
             }
             int currentPage = 1;
             if (TempData["CurrentPage"] != null)
             {
                 currentPage = (int)TempData["CurrentPage"];
             }
-            TempData["SuccessMessage"] = item.Name + " deleted successfully!";
-            return RedirectToAction(nameof(Index), new { pageIndex = currentPage });
+            if (myBool == false)
+            {
+                TempData["ErrorMessage"] = errMessage;
+                ModelState.AddModelError("", errMessage);
+                return View(item);
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage });
+            }
         }
     }
 }

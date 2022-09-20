@@ -34,6 +34,12 @@ html {
     border-radius: 15px 15px 0px 0px;
 }
 
+.bottomBar {
+    background-image: url('../img/denim.png');
+    height: 65px;
+    border-radius: 0px 0px 15px 15px;
+}
+
 .topInput {
     width: 8rem !important;
     height: 45px;
@@ -313,11 +319,9 @@ a:hover {
 }
 
 .form-control {
-  background-color: #2f383d;
   border-radius: 0;
   padding: 5px 10px;
   border: 0 none;
-  color: #ddd;
 }
 
 .form-control:focus {
