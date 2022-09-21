@@ -38,7 +38,7 @@
                     <input type="submit" value="Delete" class="btn btn-primary btn-block" />
                 </div>
                 <div class="col-4">
-                    <a class="btn btn-secondary btn-block" asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageIndex="@TempData.Peek("CurrentPage")">Back</a>
+                    <a class="btn btn-secondary btn-block" asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageIndex="@TempData.Peek("CurrentPage")">Back</a>
                 </div>
                 <div class="col-1"></div>
             </div>

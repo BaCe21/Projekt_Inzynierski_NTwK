@@ -24,6 +24,6 @@
     </dl>
     <div class="btn-group">
         <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-        <a class="btn btn-secondary ml-1" asp-action="Index" asp-route-pageIndex="@TempData.Peek("CurrentPage")">Back</a>
+        <a class="btn btn-secondary ml-1" asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageIndex="@TempData.Peek("CurrentPage")">Back</a>
     </div>
 </div>

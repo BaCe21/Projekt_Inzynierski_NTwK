@@ -12,43 +12,6 @@
             else
                 return Json(data: true);
         }
-        public SortModel ApplySort(string sortExpression)
-        {
-            ViewData["SortParamName"] = "name";
-            ViewData["SortParamDesc"] = "description";
-            ViewData["SortIconName"] = "";
-            ViewData["SortIconDesc"] = "";
-            SortModel sortModel = new SortModel();
-            switch (sortExpression.ToLower())
-            {
-                case "name_desc":
-                    sortModel.SortedOrder = SortOrder.Descending;
-                    sortModel.SortedProperty = "name";
-                    ViewData["SortParamName"] = "name";
-                    ViewData["SortIconName"] = "";
-                    break;
-                case "description":
-                    sortModel.SortedOrder = SortOrder.Ascending;
-                    sortModel.SortedProperty = "description";
-                    ViewData["SortParamDesc"] = "description_desc";
-                    ViewData["SortIconDesc"] = "fa fa-arrow-down";
-                    break;
-                case "description_desc":
-                    sortModel.SortedOrder = SortOrder.Descending;
-                    sortModel.SortedProperty = "description";
-
-                    ViewData["SortParamDesc"] = "description";
-                    ViewData["SortIconDesc"] = "fa fa-arrow-up";
-                    break;
-                default:
-                    sortModel.SortedOrder = SortOrder.Ascending;
-                    sortModel.SortedProperty = "name";
-                    ViewData["SortIconName"] = "fa fa-arrow-down";
-                    ViewData["SortParamName"] = "name_desc";
-                    break;
-            }
-            return sortModel;
-        }
         public IActionResult Index(string sortExpression = "", string SearchText = "", int pageIndex = 1, int pageSize = 5)
         {
             SortModel sortModel = new SortModel();
@@ -62,6 +25,7 @@
             site.SortExpression = sortExpression;
             this.ViewBag.Site = site;
             TempData["CurrentPage"] = pageIndex;
+            TempData["PageSize"] = pageSize;
             return View(items);
         }
 
@@ -82,6 +46,16 @@
         [HttpPost]
         public IActionResult Create(Age item)
         {
+            int currentPage = 1;
+            if (TempData["CurrentPage"] != null)
+            {
+                currentPage = (int)TempData["CurrentPage"];
+            }
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
             bool myBool = false;
             string errMessage = "";
             try
@@ -109,7 +83,7 @@
             else
             {
                 TempData["SuccessMessage"] = item.Name + " created successfully!";
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
             }
         }
 
@@ -129,6 +103,11 @@
         [HttpPost]
         public IActionResult Edit(Age item)
         {
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
             bool myBool = false;
             string errMessage = "";
             try
@@ -161,7 +140,7 @@
             }
             else
             {
-                return RedirectToAction(nameof(Index), new { pageIndex = currentPage });
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
             }
         }
 
@@ -175,6 +154,11 @@
         [HttpPost]
         public IActionResult Delete(Age item)
         {
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
             bool myBool = false;
             string errMessage = "";
             try
@@ -182,7 +166,7 @@
                 if (errMessage == "")
                 {
                     item = _repo.Delete(item);
-                    TempData["SuccessMessage"] = item.Name + " deleted successfully!";
+                    TempData["SuccessMessage"] = "Deleted successfully!";
                     myBool = true;
                 }
             }
@@ -203,7 +187,7 @@
             }
             else
             {
-                return RedirectToAction(nameof(Index), new { pageIndex = currentPage });
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
             }
         }
     }

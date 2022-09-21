@@ -11,43 +11,6 @@
             else
                 return Json(data: true);
         }
-        public SortModel ApplySort(string sortExpression)
-        {
-            ViewData["SortParamName"] = "name";
-            ViewData["SortParamDesc"] = "description";
-            ViewData["SortIconName"] = "";
-            ViewData["SortIconDesc"] = "";
-            SortModel sortModel = new SortModel();
-            switch (sortExpression.ToLower())
-            {
-                case "name_desc":
-                    sortModel.SortedOrder = SortOrder.Descending;
-                    sortModel.SortedProperty = "name";
-                    ViewData["SortParamName"] = "name";
-                    ViewData["SortIconName"] = "";
-                    break;
-                case "description":
-                    sortModel.SortedOrder = SortOrder.Ascending;
-                    sortModel.SortedProperty = "description";
-                    ViewData["SortParamDesc"] = "description_desc";
-                    ViewData["SortIconDesc"] = "fa fa-arrow-down";
-                    break;
-                case "description_desc":
-                    sortModel.SortedOrder = SortOrder.Descending;
-                    sortModel.SortedProperty = "description";
-
-                    ViewData["SortParamDesc"] = "description";
-                    ViewData["SortIconDesc"] = "fa fa-arrow-up";
-                    break;
-                default:
-                    sortModel.SortedOrder = SortOrder.Ascending;
-                    sortModel.SortedProperty = "name";
-                    ViewData["SortIconName"] = "fa fa-arrow-down";
-                    ViewData["SortParamName"] = "name_desc";
-                    break;
-            }
-            return sortModel;
-        }
         public IActionResult Index(string sortExpression="", string SearchText = "", int pageIndex = 1, int pageSize = 5)
         {
             SortModel sortModel = new SortModel();
@@ -61,6 +24,7 @@
             site.SortExpression = sortExpression;
             this.ViewBag.Site = site;
             TempData["CurrentPage"] = pageIndex;
+            TempData["PageSize"] = pageSize;
             return View(categories);
         }
 
@@ -79,19 +43,29 @@
         }
 
         [HttpPost]
-        public IActionResult Create(Category category)
+        public IActionResult Create(Category item)
         {
+            int currentPage = 1;
+            if (TempData["CurrentPage"] != null)
+            {
+                currentPage = (int)TempData["CurrentPage"];
+            }
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
             bool myBool = false;
             string errMessage = "";
             try
             {
-                if (category.Name.Length < 3 || category.Name == null)
+                if (item.Name.Length < 3 || item.Name == null)
                     errMessage = "Category name must be at least 3 characters";
-                if (_unitRepo.IsExisting(category.Name) == true)
-                    errMessage = "Name " + category.Name + " already exists in database";
+                if (_unitRepo.IsExisting(item.Name) == true)
+                    errMessage = "Name " + item.Name + " already exists in database";
                 if (errMessage == "")
                 {
-                    category = _unitRepo.Create(category);
+                    item = _unitRepo.Create(item);
                     myBool = true;
                 }
             }
@@ -103,12 +77,12 @@
             {
                 TempData["ErrorMessage"] = errMessage;
                 ModelState.AddModelError("", errMessage);
-                return View(category);
+                return View(item);
             }
             else
             {
-                TempData["SuccessMessage"] = "Category " + category.Name + " created successfully!";
-                return RedirectToAction(nameof(Index));
+                TempData["SuccessMessage"] = item.Name + " created successfully!";
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
             }
         }
 
@@ -126,20 +100,25 @@
         }
 
         [HttpPost]
-        public IActionResult Edit(Category category)
+        public IActionResult Edit(Category item)
         {
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
             bool myBool = false;
             string errMessage = "";
             try
             {
-                if (category.Name.Length < 3 || category.Name == null)
+                if (item.Name.Length < 3 || item.Name == null)
                     errMessage = "Category name must be at least 3 characters";
-                if (_unitRepo.IsExisting(category.Name, category.Id) == true)
-                    errMessage += "Category " + category.Name + " already exists in database";
+                if (_unitRepo.IsExisting(item.Name, item.Id) == true)
+                    errMessage += "Category " + item.Name + " already exists in database";
                 if (errMessage == "")
                 {
-                    category = _unitRepo.Edit(category);
-                    TempData["SuccessMessage"] = "Category " + category.Name + " saved successfully!";
+                    item = _unitRepo.Edit(item);
+                    TempData["SuccessMessage"] = item.Name + " saved successfully!";
                     myBool = true;
                 }
             }
@@ -156,11 +135,11 @@
             {
                 TempData["ErrorMessage"] = errMessage;
                 ModelState.AddModelError("", errMessage);
-                return View(category);
+                return View(item);
             }
             else
             {
-                return RedirectToAction(nameof(Index), new { pageIndex = currentPage });
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize }); 
             }
         }
 
@@ -172,26 +151,43 @@
         }
 
         [HttpPost]
-        public IActionResult Delete(Category category)
+        public IActionResult Delete(Category item)
         {
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
+            bool myBool = false;
+            string errMessage = "";
             try
             {
-                category = _unitRepo.Delete(category);
+                if (errMessage == "")
+                {
+                    item = _unitRepo.Delete(item);
+                    TempData["SuccessMessage"] = "Deleted successfully!";
+                    myBool = true;
+                }
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
-                string errMessage = exc.Message;
-                TempData["ErrorMessage"] = errMessage;
-                ModelState.AddModelError("", errMessage);
-                return View(category);
+                errMessage += " " + exc.Message;
             }
             int currentPage = 1;
             if (TempData["CurrentPage"] != null)
             {
                 currentPage = (int)TempData["CurrentPage"];
             }
-            TempData["SuccessMessage"] = "Category " + category.Name + " deleted successfully!";
-            return RedirectToAction(nameof(Index), new { pageIndex = currentPage });
+            if (myBool == false)
+            {
+                TempData["ErrorMessage"] = errMessage;
+                ModelState.AddModelError("", errMessage);
+                return View(item);
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
+            }
         }
     }
 }
