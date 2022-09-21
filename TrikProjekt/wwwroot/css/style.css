@@ -65,6 +65,9 @@ html {
         height: 35px;
         border-radius: 10px;
     }
+    .logout {
+        margin-left:15px;
+    }
 }
 
 
@@ -777,7 +780,6 @@ a:hover {
 }
 .hero-area .block {
   text-align: center;
-  z-index: 99;
 }
 .hero-area .block .video-button a {
   background: #fff;
