@@ -8,7 +8,7 @@
     <li class="nav-item">
         <a id="manage" class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
             <i class="fa-solid fa-circle-user fa-sm mr-1"></i>
-            Hello @UserManager.GetUserName(User)! - 
+            @UserManager.GetUserName(User)! - 
             @if (Admins.admins.Contains(@UserManager.GetUserName(User)))
             {
                 <span>ADMIN</span>

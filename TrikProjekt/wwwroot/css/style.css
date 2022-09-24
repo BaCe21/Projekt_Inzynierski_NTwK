@@ -15,6 +15,12 @@ html {
     min-width: 100%;
 }
 
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .MainContainer {
     margin: auto;
     width: 50%;
@@ -24,18 +30,23 @@ html {
     min-width:50%;
 }
 
+input[type=checkbox]:disabled, input[type="checkbox" i]:disabled {
+    width: 20px;
+    height: 20px;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
 
 .topBar {
-    background-image: url('../img/denim.png');
+    background-color: #1d2024;
     height: 65px;
     border-radius: 15px 15px 0px 0px;
 }
 
 .bottomBar {
-    background-image: url('../img/denim.png');
+    background-color: #1d2024;
     height: 65px;
     border-radius: 0px 0px 15px 15px;
 }
@@ -50,6 +61,14 @@ html {
     border: 1px solid;
     height: 45px;
     width: 45px;
+}
+
+.cardHeader {
+    background-color: #1d2024;
+}
+
+.caseContainer{
+width:50%;
 }
 
 @media all and (max-width: 600px) {
