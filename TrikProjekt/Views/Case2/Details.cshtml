@@ -1,0 +1,79 @@
+﻿@model TrikProjekt56.Models.Case
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row Index">
+    <div>
+        <div class="card-header cardHeader text-uppercase text-center">
+            Details of case
+        </div>
+        <form>
+            <div class="col">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label asp-for="Code" class="control-label"></label>
+                        <input asp-for="Code" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" readonly />
+                    </div>
+                     <div class="form-group col-6">
+                        <label asp-for="StartDate" class="control-label"></label>
+                        <input asp-for="StartDate" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="CategoryId" class="control-label"></label>
+                        <input asp-for="@Model.Categories.Name" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="LocationId" class="control-label"></label>
+                        <input asp-for="@Model.Locations.Name" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="AgeId" class="control-label"></label>
+                        <input asp-for="@Model.Ages.Name" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HairId" class="control-label"></label>
+                        <input asp-for="@Model.Hairs.Name" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="GenderId" class="control-label"></label>
+                        <input asp-for="@Model.Genders.Name" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="ReligionId" class="control-label"></label>
+                        <input asp-for="@Model.Religions.Name" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="EducationId" class="control-label"></label>
+                        <input asp-for="@Model.Educations.Name" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HeightId" class="control-label"></label>
+                        <input asp-for="@Model.Heights.Name" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="WeightId" class="control-label"></label>
+                        <input asp-for="@Model.Weights.Name" class="form-control" readonly />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group btn-group col-12 mt-1">
+                <div class="col-4 mt-1">
+                    <a class="btn btn-primary btn-block" asp-action="Edit" asp-route-id="@Model.Code">Edit</a>
+                </div>
+                <div class="col-4 mt-1">
+                    <a class="btn btn-secondary btn-block" asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageIndex="@TempData.Peek("CurrentPage")">Back</a>
+                </div>
+                <div class="col-4 form-check mt-2">
+                        <input asp-for="isClosed" disabled/>
+                        <label class="font-weight-bold h5">@Html.DisplayNameFor(model => model.isClosed)</label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

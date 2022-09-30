@@ -1,0 +1,97 @@
+﻿@model TrikProjekt56.Models.Case
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row Index">
+    <div>
+        <div class="card-header cardHeader text-uppercase text-center">
+            Edit case
+        </div>
+        <form asp-action="Edit">
+            <div class="col">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label asp-for="Code" class="control-label"></label>
+                        <input asp-for="Code" class="form-control" readonly />
+                        <span asp-validation-for="Code" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                     <div class="form-group col-6">
+                        <label asp-for="StartDate" class="control-label"></label>
+                        <input asp-for="StartDate" class="form-control" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="CategoryId" class="control-label"></label>
+                        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories"></select>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="LocationId" class="control-label"></label>
+                        <select asp-for="LocationId" class="form-control" asp-items="ViewBag.Locations"></select>
+                        <span asp-validation-for="LocationId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="AgeId" class="control-label"></label>
+                        <select asp-for="AgeId" class="form-control" asp-items="ViewBag.Ages"></select>
+                        <span asp-validation-for="AgeId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HairId" class="control-label"></label>
+                        <select asp-for="HairId" class="form-control" asp-items="ViewBag.Hairs"></select>
+                        <span asp-validation-for="HairId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="GenderId" class="control-label"></label>
+                        <select asp-for="GenderId" class="form-control" asp-items="ViewBag.Genders"></select>
+                        <span asp-validation-for="GenderId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="ReligionId" class="control-label"></label>
+                        <select asp-for="ReligionId" class="form-control" asp-items="ViewBag.Religions"></select>
+                        <span asp-validation-for="ReligionId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label asp-for="EducationId" class="control-label"></label>
+                        <select asp-for="EducationId" class="form-control" asp-items="ViewBag.Educations"></select>
+                        <span asp-validation-for="EducationId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="HeightId" class="control-label"></label>
+                        <select asp-for="HeightId" class="form-control" asp-items="ViewBag.Heights"></select>
+                        <span asp-validation-for="HeightId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="WeightId" class="control-label"></label>
+                        <select asp-for="WeightId" class="form-control" asp-items="ViewBag.Weights"></select>
+                        <span asp-validation-for="WeightId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group btn-group col-12 mt-1">
+                <div class="col-4 mt-1">
+                    <input type="submit" value="Update" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageIndex="@TempData.Peek("CurrentPage")" class="btn btn-primary btn-block" />
+                </div>
+                <div class="col-4 mt-1">
+                    <a class="btn btn-secondary btn-block" asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageIndex="@TempData.Peek("CurrentPage")">Back</a>
+                </div>
+                <div class="col-4 form-check mt-2">
+                        <input asp-for="isClosed" />
+                        <label class="font-weight-bold h5">@Html.DisplayNameFor(model => model.isClosed)</label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationPartial");}
+}

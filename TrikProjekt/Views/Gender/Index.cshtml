@@ -1,0 +1,84 @@
+﻿@model IEnumerable<TrikProjekt56.Models.Gender>
+@{
+    ViewData["Title"] = "Index";
+    SortModel sortModel = (SortModel)ViewData["sortModel"];
+    SiteModel site = ViewBag.Site;
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<div class="container mainSystemCollection mt-3 mb-2">
+    <div class = "row">
+        <div class="col-sm">
+            <a class="btn ml-1" asp-area="" asp-controller="Gender" asp-action="Index" style="font-size: 20px;">Gender</a>
+        </div>
+        <div class="col-sm justify-content-end">
+                <a asp-action="Create" class="btn" style="float: right; font-size: 20px;" >Create new</a>
+        </div>
+    </div>
+</div>
+<div class="container mainSystemCollection">
+    <div class="row">
+            <partial name="TopBar" model="@site" />
+    </div>
+    <div class = "row">
+        <div class = "container m-0 p-0">
+            <table class="table mainTableCollection shadowtable">
+                <thead>
+                    <tr>
+                        <th style="width: 30%">
+                            <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
+                            <a class="text-primary" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
+                                @Html.DisplayNameFor(model => model.Name)
+                            </a>
+                        </th>
+                        <th style="width: 30%">
+                            <i class="@sortModel.GetColumn("description").SortIcon" arial-hidden="true"></i>
+                            <a class="text-primary" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("description").SortExpression">
+                                @Html.DisplayNameFor(model => model.Description)
+                            </a>
+                        </th>
+                        <th class="text-primary" style="width: 40%">
+                            Options
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a asp-action="Edit" asp-route-id="@item.Id">
+                                        <span class="btn btn-outline-secondary myButton">
+                                            <i class="fa fa-edit" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id">
+                                        <span class="btn btn-outline-secondary myButton">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id">
+                                        <span class="btn btn-outline-danger myButton">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 100px;">
+            <partial name="BottomBar" model="@site" />
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationPartial");}
+}

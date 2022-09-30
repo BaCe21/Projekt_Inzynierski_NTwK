@@ -1,0 +1,36 @@
+﻿@model TrikProjekt56.Models.Education
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row Index MainContainer justify-content-center">
+    <h1>Education Edit</h1>
+</div>
+<hr />
+<div class="row Index MainContainer">
+    <div class="col">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group btn-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-secondary ml-1" asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageIndex="@TempData.Peek("CurrentPage")">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationPartial");}
+}

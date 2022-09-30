@@ -1,0 +1,735 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<TrikProjekt56.Models.Case>
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@if (Admins.admins.Contains(@UserManager.GetUserName(User)))
+{
+
+    <div class="container chartscontainer">
+
+    <h1 class="my-4 text-center">Charts</h1>
+
+    <hr class="new1">
+
+    <!-- Category -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_category">
+          <canvas id="chartcategory"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Categories</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      </div>
+    </div>
+
+    <hr class="new1">
+    
+    <!-- Location -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_location">
+            <canvas id="chartlocation"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Locations</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      </div>
+    </div>
+
+    <hr class="new1">
+
+    <!-- Age -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_age">
+            <canvas id="chartage"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Ages</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      </div>
+    </div>
+
+    <hr class="new1">
+
+    <!-- Hair -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_hair">
+            <canvas id="charthair"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Hairs</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      </div>
+    </div>
+
+    <hr class="new1">
+
+    <!-- Gender -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_gender">
+            <canvas id="chartgender"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Genders</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      </div>
+    </div>
+
+    <hr class="new1">
+
+    <!-- Religion -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_religion">
+            <canvas id="chartreligion"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Religions</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      </div>
+    </div>
+
+    <hr class="new1">
+
+    <!-- Educations -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_education">
+            <canvas id="charteducation"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Educations</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      </div>
+    </div>
+
+    <hr class="new1">
+
+    <!-- Heights -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_height">
+            <canvas id="chartheight"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Heights</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      </div>
+    </div>
+
+    <hr class="new1">
+
+    <!-- Weights -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_weight">
+            <canvas id="chartweight"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Weights</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+      </div>
+    </div>
+
+    </div>
+
+<script>
+@*Category Graph*@
+var catArray = @Html.Raw(Json.Serialize(ViewBag.Categories));
+var catArray2 = @Html.Raw(Json.Serialize(ViewBag.Category));
+var ctx = $("#chartcategory");
+let delayed;
+var catChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: catArray2,
+        datasets: [{
+            label: "Categories",
+            data: catArray,
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Category name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
+    }
+});
+
+@*Location Graph*@
+var locArray = @Html.Raw(Json.Serialize(ViewBag.Locations));
+var locArray2 = @Html.Raw(Json.Serialize(ViewBag.Location));
+var ctx2 = $("#chartlocation");
+var locChart = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: locArray2,
+        datasets: [{
+            label: "Locations",
+            data: locArray,
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Location name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
+    }
+});
+
+@*Age Graph*@
+var ageArray = @Html.Raw(Json.Serialize(ViewBag.Ages));
+var ageArray2 = @Html.Raw(Json.Serialize(ViewBag.Age));
+var ctx3 = $("#chartage");
+var ageChart = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+        labels: ageArray2,
+        datasets: [{
+            label: "Ages",
+            data: ageArray,
+            borderWidth: 1
+        }]
+    },
+   options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Age name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
+    }
+});
+
+@*Hair Graph*@
+var hairArray = @Html.Raw(Json.Serialize(ViewBag.Hairs));
+var hairArray2 = @Html.Raw(Json.Serialize(ViewBag.Hair));
+var ctx4 = $("#charthair");
+var hairChart = new Chart(ctx4, {
+    type: 'bar',
+    data: {
+        labels: hairArray2,
+        datasets: [{
+            label: "Hairs",
+            data: hairArray,
+            borderWidth: 1
+        }]
+    },
+   options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Hair name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
+    }
+});
+
+@*Gender Graph*@
+var genArray = @Html.Raw(Json.Serialize(ViewBag.Genders));
+var genArray2 = @Html.Raw(Json.Serialize(ViewBag.Gender));
+var ctx5 = $("#chartgender");
+var genderChart = new Chart(ctx5, {
+    type: 'bar',
+    data: {
+        labels: genArray2,
+        datasets: [{
+            label: "Genders",
+            data: genArray,
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Gender name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
+    }
+});
+@*Religion Graph*@
+var relArray = @Html.Raw(Json.Serialize(ViewBag.Religions));
+var relArray2 = @Html.Raw(Json.Serialize(ViewBag.Religion));
+var ctx6 = $("#chartreligion");
+var religionChart = new Chart(ctx6, {
+    type: 'bar',
+    data: {
+        labels: relArray2,
+        datasets: [{
+            label: "Religions",
+            data: relArray,
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Religion name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
+    }
+});
+
+@*Education Graph*@
+var eduArray = @Html.Raw(Json.Serialize(ViewBag.Educations));
+var eduArray2 = @Html.Raw(Json.Serialize(ViewBag.Education));
+var ctx7 = $("#charteducation");
+var educationChart = new Chart(ctx7, {
+    type: 'bar',
+    data: {
+        labels: eduArray2,
+        datasets: [{
+            label: "Educations",
+            data: eduArray,
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Education name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
+    }
+});
+
+@*Height Graph*@
+var heiArray = @Html.Raw(Json.Serialize(ViewBag.Heights));
+var heiArray2 = @Html.Raw(Json.Serialize(ViewBag.Height));
+var ctx8 = $("#chartheight");
+var heightChart = new Chart(ctx8, {
+    type: 'bar',
+    data: {
+        labels: heiArray2,
+        datasets: [{
+            label: "Heights",
+            data: heiArray,
+            borderWidth: 1
+        }]
+    },
+   options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Height name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
+    }
+});
+
+@*Weight Graph*@
+var weiArray = @Html.Raw(Json.Serialize(ViewBag.Weights));
+var weiArray2 = @Html.Raw(Json.Serialize(ViewBag.Weight));
+var ctx9 = $("#chartweight");
+var weightChart = new Chart(ctx9, {
+    type: 'bar',
+    data: {
+        labels: weiArray2,
+        datasets: [{
+            label: "Weights",
+            data: weiArray,
+            borderWidth: 1
+        }]
+    },
+   options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Weight name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
+    }
+});
+
+</script>
+}
+else{
+    <h1 class="text-center mt-5">YOU HAVE NO PERMISSION TO ACCESS THIS SITE! PLEASE CONTACT YOUR ADMINISTRATOR</h1>
+}
