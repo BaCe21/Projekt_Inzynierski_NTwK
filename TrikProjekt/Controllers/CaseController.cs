@@ -357,7 +357,7 @@ namespace TrikProjekt56.Controllers
 
                 csv += "\r\n";
             }
-            byte[] bytes = Encoding.ASCII.GetBytes(csv);
+            byte[] bytes = Encoding.UTF8.GetBytes(csv);
             return File(bytes, "text/csv", "Cases.csv");
         }
         public FileResult ExportToCSVNumeric()
@@ -388,7 +388,7 @@ namespace TrikProjekt56.Controllers
 
                 csv += "\r\n";
             }
-            byte[] bytes = Encoding.ASCII.GetBytes(csv);
+            byte[] bytes = Encoding.UTF8.GetBytes(csv);
             return File(bytes, "text/csv", "CasesNumeric.csv");
         }
         private List<SelectListItem> GetCategories()
