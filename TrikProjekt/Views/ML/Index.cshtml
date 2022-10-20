@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<TrikProjekt56.Models.Case>
+@{
+    ViewData["Title"] = "MachineLearning";
+}
+@if (Admins.admins.Contains(@UserManager.GetUserName(User)))
+{
+    <div class="container">
+        123321
+    </div>
+
+}
+else{
+    <h1 class="text-center mt-5">YOU HAVE NO PERMISSION TO ACCESS THIS SITE! PLEASE CONTACT YOUR ADMINISTRATOR</h1>
+}

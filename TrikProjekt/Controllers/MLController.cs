@@ -2,12 +2,11 @@
 
 namespace TrikProjekt56.Controllers
 {
-    public class AdminsController : Controller
+    public class MLController : Controller
     {
         public IActionResult Index()
         {
-            List<string> admins = Admins.admins;
-            return View(admins);
+            return View();
         }
     }
 }

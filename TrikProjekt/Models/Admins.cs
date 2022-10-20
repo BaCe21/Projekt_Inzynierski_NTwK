@@ -4,14 +4,12 @@
     {
         public static List<string> admins = new List<string>{
             "jakub",
-            "jakubtest"
+            "jakubtest",
+            "admin1",
+            "admin2",
+            "admin3",
+            "admin4",
+            "admin5"
         };
-
-        public static void ChangeAdmins()
-        {
-            List<string> admins2 = admins;
-            admins2.Add("test");
-            admins = new List<string>(admins2);
-        }
     }
 }
