@@ -2,6 +2,9 @@ global using System;
 global using System.Collections.Generic;
 global using System.Linq;
 global using System.Threading.Tasks;
+global using System.Configuration;
+global using Azure.Storage.Blobs;
+global using Azure.Storage.Blobs.Models;
 global using Microsoft.AspNetCore.Mvc;
 global using System.ComponentModel.DataAnnotations;
 global using TrikProjekt56.Models;
@@ -23,13 +26,13 @@ using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddControllers();
 builder.Services.AddScoped<ICategory, CategoryRepository>();
 builder.Services.AddScoped<ILocation, LocationRepository>();
 builder.Services.AddScoped<IAge, AgeRepository>();
 builder.Services.AddScoped<IHair, HairRepository>();
-builder.Services.AddScoped<IFeature, FeatureRepository>();
-builder.Services.AddScoped<ICorpse, CorpseRepository>();
+builder.Services.AddScoped<IGender, GenderRepository>();
+builder.Services.AddScoped<IReligion, ReligionRepository>();
 builder.Services.AddScoped<IEducation, EducationRepository>();
 builder.Services.AddScoped<IHeight, HeightRepository>();
 builder.Services.AddScoped<IWeight, WeightRepository>();
@@ -37,7 +40,6 @@ builder.Services.AddScoped<ICase, CaseRepository>();
 builder.Services.AddDbContext<CaseContext>(options => options.UseSqlServer(builder.Configuration.GetSection("ConnectionStrings:dbconn").Value));
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
 .AddEntityFrameworkStores<CaseContext>();
-
 var app = builder.Build();
 
 if (builder.Environment.IsDevelopment())
@@ -55,7 +57,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.MapControllers();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
@@ -63,5 +65,4 @@ app.UseEndpoints(endpoints =>
         pattern: "{controller=Home}/{action=Index}/{id?}");
     endpoints.MapRazorPages();
 });
-
 app.Run();

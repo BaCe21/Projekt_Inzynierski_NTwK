@@ -15,7 +15,7 @@ namespace TrikProjekt56.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "StartDate")]
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Today;
 
         [Display(Name = "Case closed?")]
         public bool isClosed { get; set; }

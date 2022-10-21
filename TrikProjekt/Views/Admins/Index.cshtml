@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Admins";
+}
+<table class = "table table-striped adminTable text-white">
+    <tr>
+        <th scope="col">
+            <h1>Administrative accounts</h1>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td scope="row">
+            @item
+        </td>
+    </tr>
+    }
+</table>

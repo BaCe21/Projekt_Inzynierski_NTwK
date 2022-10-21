@@ -5,77 +5,80 @@
     SiteModel site = ViewBag.Site;
 }
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<div class="container-fluid btn-group">
-    <div class="col-10">
-        <h2>Weight</h2>
-    </div>
-    <div class="col-2 justify-content-end">
-        <p>
-            <a asp-action="Create" class="btn btn-primary">Create new</a>
-        </p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-12">
-        <partial name="TopBar" model="@site" />
+<div class="container-fluid mainSystemCollection mt-3 mb-2">
+    <div class = "row">
+        <div class="col-sm">
+            <a class="btn ml-1" asp-area="" asp-controller="Weight" asp-action="Index" style="font-size: 20px;">Weight</a>
+        </div>
+        <div class="col-sm justify-content-end">
+                <a asp-action="Create" class="btn" style="float: right; font-size: 20px;" >Create new</a>
+        </div>
     </div>
 </div>
-<table class="table myBackground">
-    <thead>
-        <tr>
-            <th>
-                <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
-                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
-                    @Html.DisplayNameFor(model => model.Name)
-                </a>
-            </th>
-            <th>
-                <i class="@sortModel.GetColumn("description").SortIcon" arial-hidden="true"></i>
-                <a asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("description").SortExpression">
-                    @Html.DisplayNameFor(model => model.Description)
-                </a>
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <div class="btn-group">
-                    <a asp-action="Edit" asp-route-id="@item.Id">
-                        <span class="btn btn-sm btn-outline-secondary">
-                            <i class="fa fa-edit" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                    <a asp-action="Details" asp-route-id="@item.Id">
-                        <span class="btn btn-sm btn-outline-secondary">
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                    <a asp-action="Delete" asp-route-id="@item.Id">
-                        <span class="btn btn-sm btn-outline-secondary">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                </div>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-<div class="row">
-    <div class="col-12">
-        <partial name="BottomBar" model="@site" />
+<div class="container-fluid mainSystemCollection">
+    <div class="row">
+            <partial name="TopBar" model="@site" />
+    </div>
+    <div class = "row">
+        <div class = "container-fluid m-0 p-0">
+            <table class="table mainTableCollection shadowtable">
+                <thead>
+                    <tr>
+                        <th style="width: 30%">
+                            <i class="@sortModel.GetColumn("name").SortIcon" arial-hidden="true"></i>
+                            <a class="text-primary" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("name").SortExpression">
+                                @Html.DisplayNameFor(model => model.Name)
+                            </a>
+                        </th>
+                        <th style="width: 30%">
+                            <i class="@sortModel.GetColumn("description").SortIcon" arial-hidden="true"></i>
+                            <a class="text-primary" asp-action="Index" asp-route-sortExpression="@sortModel.GetColumn("description").SortExpression">
+                                @Html.DisplayNameFor(model => model.Description)
+                            </a>
+                        </th>
+                        <th class="text-primary" style="width: 40%">
+                            Options
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a asp-action="Edit" asp-route-id="@item.Id">
+                                        <span class="btn btn-outline-secondary myButton">
+                                            <i class="fa fa-edit" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id">
+                                        <span class="btn btn-outline-secondary myButton">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id">
+                                        <span class="btn btn-outline-danger myButton">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 100px;">
+            <partial name="BottomBar" model="@site" />
     </div>
 </div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationPartial");}
 }

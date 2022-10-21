@@ -99,6 +99,12 @@
             Pagination<Case> retItems = new Pagination<Case>(items, pageIndex, pageSize);
             return retItems;
         }
+        public List<Case> GetAllItems()
+        {
+            List<Case> items;
+            items = _context.Cases.Include(c => c.Categories).Include(x => x.Locations).Include(y=>y.Ages).Include(z =>z.Hairs).Include(g=>g.Genders).Include(h=>h.Religions).Include(i=>i.Educations).Include(j=>j.Heights).Include(k=>k.Weights).ToList();
+            return items;
+        }
         public List<Case> GetCategiores()
         {
             List<Case> items;

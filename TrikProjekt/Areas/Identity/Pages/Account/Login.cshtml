@@ -2,10 +2,9 @@
 @model LoginModel
 
 <h1>@ViewData["Title"]</h1>
-<div class="row Index">
-    <div class="b-example-divider"></div>
-    <div class="MainContainer">
-        <section class="border">
+<div class="row">
+    <div class="Index MainContainer">
+        <section>
             <form id="account" method="post">
                 <h4>Login</h4>
                 <hr />
@@ -42,5 +41,5 @@
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <partial name="_ValidationPartial" />
 }

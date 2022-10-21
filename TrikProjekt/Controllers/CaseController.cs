@@ -1,4 +1,7 @@
-﻿namespace TrikProjekt56.Controllers
+﻿using System.IO;
+using System.Text;
+
+namespace TrikProjekt56.Controllers
 {
     [Authorize]
     public class CaseController : Controller
@@ -325,6 +328,68 @@
             }
             TempData["SuccessMessage"] = item.Name + " deleted successfully!";
             return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
+        }
+        public FileResult ExportToCSV()
+        {
+            string[] columnNames = new string[] { "Code", "Name", "StartDate", "isClosed", "Categories", "Locations", "Ages", "Hairs", "Genders", "Religions", "Educations", "Heights", "Weights" };
+            var Cases = _repo.GetAllItems();
+            string csv = string.Empty;
+            foreach (string columnName in columnNames)
+            {
+                csv += columnName + ',';
+            }
+            csv += "\r\n";
+            foreach (var idcase in Cases)
+            {
+                csv += idcase.Code.ToString().Replace(",", ";") + ',';
+                csv += idcase.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.StartDate.ToString("MM/dd/yyyy").Replace(",", ";") + ',';
+                csv += idcase.isClosed.ToString().Replace(",", ";") + ',';
+                csv += idcase.Categories.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.Locations.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.Ages.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.Hairs.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.Genders.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.Religions.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.Educations.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.Heights.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.Weights.Name.ToString().Replace(",", ";") + ',';
+
+                csv += "\r\n";
+            }
+            byte[] bytes = Encoding.UTF8.GetBytes(csv);
+            return File(bytes, "text/csv", "Cases.csv");
+        }
+        public FileResult ExportToCSVNumeric()
+        {
+            string[] columnNames = new string[] { "Code", "Name", "StartDate", "isClosed", "Categories", "Locations", "Ages", "Hairs", "Genders", "Religions", "Educations", "Heights", "Weights" };
+            var Cases = _repo.GetAllItems();
+            string csv = string.Empty;
+            foreach (string columnName in columnNames)
+            {
+                csv += columnName + ',';
+            }
+            csv += "\r\n";
+            foreach (var idcase in Cases)
+            {
+                csv += idcase.Code.ToString().Replace(",", ";") + ',';
+                csv += idcase.Name.ToString().Replace(",", ";") + ',';
+                csv += idcase.StartDate.ToString("MM/dd/yyyy").Replace(",", ";") + ',';
+                csv += idcase.isClosed.ToString().Replace(",", ";") + ',';
+                csv += idcase.CategoryId.ToString().Replace(",", ";") + ',';
+                csv += idcase.LocationId.ToString().Replace(",", ";") + ',';
+                csv += idcase.AgeId.ToString().Replace(",", ";") + ',';
+                csv += idcase.HairId.ToString().Replace(",", ";") + ',';
+                csv += idcase.GenderId.ToString().Replace(",", ";") + ',';
+                csv += idcase.ReligionId.ToString().Replace(",", ";") + ',';
+                csv += idcase.EducationId.ToString().Replace(",", ";") + ',';
+                csv += idcase.HeightId.ToString().Replace(",", ";") + ',';
+                csv += idcase.WeightId.ToString().Replace(",", ";") + ',';
+
+                csv += "\r\n";
+            }
+            byte[] bytes = Encoding.UTF8.GetBytes(csv);
+            return File(bytes, "text/csv", "CasesNumeric.csv");
         }
         private List<SelectListItem> GetCategories()
         {

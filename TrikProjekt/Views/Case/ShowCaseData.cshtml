@@ -10,53 +10,218 @@
 @if (Admins.admins.Contains(@UserManager.GetUserName(User)))
 {
 
-<div id="chartscontainer">
-    <div id="chart_category">
-        <canvas id="chartcategory"></canvas>
+    <div class="container chartscontainer mb-3">
+
+    <h1 class="display-3 text-center text-black-50">Charts<i class="ml-3 fa-solid fa-chart-column"></i></h1>
+
+    <hr class="new1">
+
+    <!-- Category -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_category">
+          <canvas id="chartcategory"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3 statsTextCenter">
+        <i class="fa-solid fa-list fa-xl"></i>
+        <h3>Categories</h3>
+      </div>
     </div>
-    <div id="chart_location">
-        <canvas id="chartlocation"></canvas>
+
+    <hr class="new1">
+    
+    <!-- Location -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_location">
+            <canvas id="chartlocation"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3 statsTextCenter">
+        <i class="fa-solid fa-map fa-xl"></i>
+        <h3>Locations</h3>
+      </div>
     </div>
-    <div id="chart_age">
-        <canvas id="chartage"></canvas>
+
+    <hr class="new1">
+
+    <!-- Age -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_age">
+            <canvas id="chartage"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3 statsTextCenter">
+        <i class="fa-solid fa-arrow-down-1-9 fa-xl"></i>
+        <h3>Ages</h3>
+      </div>
     </div>
-    <div id="chart_hair">
-        <canvas id="charthair"></canvas>
+
+    <hr class="new1">
+
+    <!-- Hair -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_hair">
+            <canvas id="charthair"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3 statsTextCenter">
+        <i class="fa-solid fa-scissors fa-xl"></i>
+        <h3>Hairs</h3>
+      </div>
     </div>
-    <div id="chart_gender">
-        <canvas id="chartgender"></canvas>
+
+    <hr class="new1">
+
+    <!-- Gender -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_gender">
+            <canvas id="chartgender"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3 statsTextCenter">
+        <i class="fa-solid fa-venus-mars fa-xl"></i>
+        <h3>Genders</h3>
+      </div>
     </div>
-    <div id="chart_religion">
-        <canvas id="chartreligion"></canvas>
+
+    <hr class="new1">
+
+    <!-- Religion -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_religion">
+            <canvas id="chartreligion"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3 statsTextCenter">
+        <i class="fa-solid fa-church fa-xl"></i>
+        <h3>Religions</h3>
+      </div>
     </div>
-    <div id="chart_education">
-        <canvas id="charteducation"></canvas>
+
+    <hr class="new1">
+
+    <!-- Educations -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_education">
+            <canvas id="charteducation"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3 statsTextCenter">
+        <i class="fa-solid fa-school fa-xl"></i>
+        <h3>Educations</h3>
+      </div>
     </div>
-    <div id="chart_height">
-        <canvas id="chartheight"></canvas>
+
+    <hr class="new1">
+
+    <!-- Heights -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_height">
+            <canvas id="chartheight"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3 statsTextCenter">
+        <i class="fa-solid fa-ruler-vertical fa-xl"></i>
+        <h3>Heights</h3>
+      </div>
     </div>
-    <div id="chart_weight">
-        <canvas id="chartweight"></canvas>
+
+    <hr class="new1">
+
+    <!-- Weights -->
+    <div class="row">
+      <div class="col-md-9">
+        <div id="chart_weight">
+            <canvas id="chartweight"></canvas>
+        </div>
+      </div>
+      <div class="col-md-3 statsTextCenter">
+        <i class="fa-solid fa-weight-hanging fa-xl"></i>
+        <h3>Weights</h3>
+      </div>
     </div>
-</div>
+
+    </div>
 
 <script>
 @*Category Graph*@
 var catArray = @Html.Raw(Json.Serialize(ViewBag.Categories));
 var catArray2 = @Html.Raw(Json.Serialize(ViewBag.Category));
 var ctx = $("#chartcategory");
+let delayed;
 var catChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: catArray2,
         datasets: [{
-            label: "Bar Chart",
+            label: "Categories",
             data: catArray,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(201, 203, 207, 0.5)'
+            ],
             borderWidth: 1
         }]
     },
-    myOptions: {
-        maintainAspectRatio: false
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Category name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
     }
 });
 
@@ -69,13 +234,66 @@ var locChart = new Chart(ctx2, {
     data: {
         labels: locArray2,
         datasets: [{
-            label: "Bar Chart",
+            label: "Locations",
             data: locArray,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(201, 203, 207, 0.5)'
+            ],
             borderWidth: 1
         }]
     },
-    myOptions: {
-        maintainAspectRatio: false
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Location name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
     }
 });
 
@@ -88,13 +306,66 @@ var ageChart = new Chart(ctx3, {
     data: {
         labels: ageArray2,
         datasets: [{
-            label: "Bar Chart",
+            label: "Ages",
             data: ageArray,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(201, 203, 207, 0.5)'
+            ],
             borderWidth: 1
         }]
     },
-    myOptions: {
-        maintainAspectRatio: false
+   options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Age name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
     }
 });
 
@@ -107,13 +378,66 @@ var hairChart = new Chart(ctx4, {
     data: {
         labels: hairArray2,
         datasets: [{
-            label: "Bar Chart",
+            label: "Hairs",
             data: hairArray,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(201, 203, 207, 0.5)'
+            ],
             borderWidth: 1
         }]
     },
-    myOptions: {
-        maintainAspectRatio: false
+   options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Hair name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
     }
 });
 
@@ -126,16 +450,68 @@ var genderChart = new Chart(ctx5, {
     data: {
         labels: genArray2,
         datasets: [{
-            label: "Bar Chart",
+            label: "Genders",
             data: genArray,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(201, 203, 207, 0.5)'
+            ],
             borderWidth: 1
         }]
     },
-    myOptions: {
-        maintainAspectRatio: false
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Gender name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
     }
 });
-
 @*Religion Graph*@
 var relArray = @Html.Raw(Json.Serialize(ViewBag.Religions));
 var relArray2 = @Html.Raw(Json.Serialize(ViewBag.Religion));
@@ -145,13 +521,66 @@ var religionChart = new Chart(ctx6, {
     data: {
         labels: relArray2,
         datasets: [{
-            label: "Bar Chart",
+            label: "Religions",
             data: relArray,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(201, 203, 207, 0.5)'
+            ],
             borderWidth: 1
         }]
     },
-    myOptions: {
-        maintainAspectRatio: false
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Religion name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
     }
 });
 
@@ -164,13 +593,66 @@ var educationChart = new Chart(ctx7, {
     data: {
         labels: eduArray2,
         datasets: [{
-            label: "Bar Chart",
+            label: "Educations",
             data: eduArray,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(201, 203, 207, 0.5)'
+            ],
             borderWidth: 1
         }]
     },
-    myOptions: {
-        maintainAspectRatio: false
+    options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Education name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
     }
 });
 
@@ -183,13 +665,66 @@ var heightChart = new Chart(ctx8, {
     data: {
         labels: heiArray2,
         datasets: [{
-            label: "Bar Chart",
+            label: "Heights",
             data: heiArray,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(201, 203, 207, 0.5)'
+            ],
             borderWidth: 1
         }]
     },
-    myOptions: {
-        maintainAspectRatio: false
+   options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Height name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
     }
 });
 
@@ -202,18 +737,71 @@ var weightChart = new Chart(ctx9, {
     data: {
         labels: weiArray2,
         datasets: [{
-            label: "Bar Chart",
+            label: "Weights",
             data: weiArray,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.5)',
+              'rgba(255, 205, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(201, 203, 207, 0.5)'
+            ],
             borderWidth: 1
         }]
     },
-    myOptions: {
-        maintainAspectRatio: false
+   options: {
+        responsive: true,
+        scales: {
+        x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Weight name',
+                    color: '#911',
+                    font: {
+                        family: 'Comic Sans MS',
+                        size: 20,
+                        weight: 'bold',
+                        lineHeight: 1.2,
+                    },
+                    padding: { top: 5, left: 0, right: 0, bottom: 0 }
+                }
+            },
+            y: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Value',
+                    color: '#191',
+                    font: {
+                        family: 'Times',
+                        size: 20,
+                        style: 'normal',
+                        lineHeight: 1.2
+                    },
+                    padding: { top: 0, left: 0, right: 0, bottom: 0 }
+                }
+            }
+        } 
+        ,
+        animation: {
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+                let delay = 0;
+                if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 500;
+                }
+                return delay;
+            },
+        }
     }
 });
 
 </script>
 }
 else{
-    <h1>YOU HAVE NO PERMISSION TO ACCESS THIS SITE! PLEASE CONTACT YOUR ADMINISTRATOR</h1>
+    <h1 class="text-center mt-5">YOU HAVE NO PERMISSION TO ACCESS THIS SITE! PLEASE CONTACT YOUR ADMINISTRATOR</h1>
 }
