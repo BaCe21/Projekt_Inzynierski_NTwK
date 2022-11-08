@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dzuni\\Desktop\\TrikProjekt\\TrikProjekt\\TrikProjekt56.csproj": {}
+    "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt56.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dzuni\\Desktop\\TrikProjekt\\TrikProjekt\\TrikProjekt56.csproj": {
+    "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt56.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dzuni\\Desktop\\TrikProjekt\\TrikProjekt\\TrikProjekt56.csproj",
+        "projectUniqueName": "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt56.csproj",
         "projectName": "TrikProjekt56",
-        "projectPath": "C:\\Users\\dzuni\\Desktop\\TrikProjekt\\TrikProjekt\\TrikProjekt56.csproj",
-        "packagesPath": "C:\\Users\\dzuni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dzuni\\Desktop\\TrikProjekt\\TrikProjekt\\obj\\",
+        "projectPath": "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt56.csproj",
+        "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jakub\\Desktop\\TrikProjekt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dzuni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.13.1, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.7, )"
@@ -85,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

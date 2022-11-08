@@ -11,43 +11,7 @@
             else
                 return Json(data: true);
         }
-        public SortModel ApplySort(string sortExpression)
-        {
-            ViewData["SortParamName"] = "name";
-            ViewData["SortParamDesc"] = "description";
-            ViewData["SortIconName"] = "";
-            ViewData["SortIconDesc"] = "";
-            SortModel sortModel = new SortModel();
-            switch (sortExpression.ToLower())
-            {
-                case "name_desc":
-                    sortModel.SortedOrder = SortOrder.Descending;
-                    sortModel.SortedProperty = "name";
-                    ViewData["SortParamName"] = "name";
-                    ViewData["SortIconName"] = "";
-                    break;
-                case "description":
-                    sortModel.SortedOrder = SortOrder.Ascending;
-                    sortModel.SortedProperty = "description";
-                    ViewData["SortParamDesc"] = "description_desc";
-                    ViewData["SortIconDesc"] = "fa fa-arrow-down";
-                    break;
-                case "description_desc":
-                    sortModel.SortedOrder = SortOrder.Descending;
-                    sortModel.SortedProperty = "description";
-
-                    ViewData["SortParamDesc"] = "description";
-                    ViewData["SortIconDesc"] = "fa fa-arrow-up";
-                    break;
-                default:
-                    sortModel.SortedOrder = SortOrder.Ascending;
-                    sortModel.SortedProperty = "name";
-                    ViewData["SortIconName"] = "fa fa-arrow-down";
-                    ViewData["SortParamName"] = "name_desc";
-                    break;
-            }
-            return sortModel;
-        }
+      
         public IActionResult Index(string sortExpression = "", string SearchText = "", int pageIndex = 1, int pageSize = 5)
         {
             SortModel sortModel = new SortModel();
@@ -61,6 +25,7 @@
             site.SortExpression = sortExpression;
             this.ViewBag.Site = site;
             TempData["CurrentPage"] = pageIndex;
+            TempData["PageSize"] = pageSize;
             return View(items);
         }
 
@@ -81,6 +46,16 @@
         [HttpPost]
         public IActionResult Create(Height item)
         {
+            int currentPage = 1;
+            if (TempData["CurrentPage"] != null)
+            {
+                currentPage = (int)TempData["CurrentPage"];
+            }
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
             bool myBool = false;
             string errMessage = "";
             try
@@ -108,7 +83,7 @@
             else
             {
                 TempData["SuccessMessage"] = item.Name + " created successfully!";
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
             }
         }
 
@@ -128,6 +103,11 @@
         [HttpPost]
         public IActionResult Edit(Height item)
         {
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
             bool myBool = false;
             string errMessage = "";
             try
@@ -160,7 +140,7 @@
             }
             else
             {
-                return RedirectToAction(nameof(Index), new { pageIndex = currentPage });
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
             }
         }
 
@@ -174,24 +154,41 @@
         [HttpPost]
         public IActionResult Delete(Height item)
         {
+            int pageSize = 5;
+            if (TempData["PageSize"] != null)
+            {
+                pageSize = (int)TempData["PageSize"];
+            }
+            bool myBool = false;
+            string errMessage = "";
             try
             {
-                item = _repo.Delete(item);
+                if (errMessage == "")
+                {
+                    item = _repo.Delete(item);
+                    TempData["SuccessMessage"] = "Deleted successfully!";
+                    myBool = true;
+                }
             }
             catch (Exception exc)
             {
-                string errMessage = exc.Message;
-                TempData["ErrorMessage"] = errMessage;
-                ModelState.AddModelError("", errMessage);
-                return View(item);
+                errMessage += " " + exc.Message;
             }
             int currentPage = 1;
             if (TempData["CurrentPage"] != null)
             {
                 currentPage = (int)TempData["CurrentPage"];
             }
-            TempData["SuccessMessage"] = item.Name + " deleted successfully!";
-            return RedirectToAction(nameof(Index), new { pageIndex = currentPage });
+            if (myBool == false)
+            {
+                TempData["ErrorMessage"] = errMessage;
+                ModelState.AddModelError("", errMessage);
+                return View(item);
+            }
+            else
+            {
+                return RedirectToAction(nameof(Index), new { pageIndex = currentPage, pageSize = pageSize });
+            }
         }
     }
 }
