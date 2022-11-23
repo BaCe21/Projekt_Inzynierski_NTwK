@@ -9,7 +9,7 @@ namespace TrikProjekt56.Models
         public string Code { get; set; }
 
         [Required]
-        [StringLength(25)]
+        [StringLength(75)]
         public string Name { get; set; }
 
         [DataType(DataType.Date)]
