@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleMainPage.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>FLASK CSV File Upload</title>
+  </head>
+  <body>
+    <header id="navigation" class="navigation">
+      <div class="container">
+          <div class="navbar-header w-100">
+              <nav class="navbar navbar-expand-lg navbar-dark px-0">
+                  <!-- logo -->
+                  <a class="navbar-brand text-white"><i class="fa-solid fa-3 fa-sm mr-1"></i><i class="fa-solid fa-k fa-sm mr-1"></i><i class="fa-solid fa-magic-wand-sparkles fa-sm mr-1"></i></a>
+                  <!-- /logo -->
+                  <div id="navbar01" class="text-center w-100">
+                    <span class="text-danger h5">You are currently using beta Trik ML modules - Take Care</span>
+                    <img class="pythonLogo ml-3" src="{{ url_for('static', filename='images/python.png') }}">
+                  </div>
+              </nav>
+          </div>
+      </div>
+  </header>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  <!-- End Navigation====================================-->
+  <!-- Main==============================================-->
+  <div class="flex-container borderML w-100">
+    <div class="row w-100 m-3 p-3">
+      <div class="col w-100 h-5 text-white text-center">
+        <h1 class="display-4">Cases list</h1>
+      </div>
+    </div>
+  </div>
+<div class="container text-white text-center">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <table class="table table-responsive">
+        {{data | safe }}
+      </table>
+    </div>
+  </div>
+</div>
+  <div class="flex-container borderML w-100">
+    <div class="row w-100 m-3 p-3">
+      <div class="col w-100 h-5 text-white text-center">
+        <h1 class="display-4">Hierarchical Clustering</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid w-100 mt-2">
+    <div class="row w-100 justify-content-center">
+      <h1 class="display-5 text-white">Basic implementation</h1>
+    </div>
+    <div class="row w-100 justify-content-center">
+        <div class="chart" id="bargraph">
+          <script>
+              var graphs = {{plot | safe}};
+              Plotly.plot('bargraph',graphs,{});
+          </script>
+        </div>
+    </div>
+        <div class="row w-100 justify-content-center mt-5">
+          <h1 class="display-5 text-white">Clusters implementation</h1>
+        </div>
+        <div class="row w-100 justify-content-center">
+           <div class="chart" id="bargraph2">
+            <script>
+              var graphs2 = {{plot2 | safe}};
+              Plotly.plot('bargraph2',graphs2,{});
+            </script>
+          </div>
+    </div>
+ </div>
+  <div class="flex-container borderML w-100">
+    <div class="row w-100 m-3 p-3">
+      <div class="col w-100 h-5 text-white text-center">
+        <h1 class="display-4">Cases with clusters</h1>
+      </div>
+    </div>
+  </div>
+<div class="container text-white text-center">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <table class="table table-responsive">
+        {{clusters | safe }}
+      </table>
+    </div>
+  </div>
+</div>
+<div class="flex-container borderML w-100">
+  <div class="row w-100 m-3 p-3">
+    <div class="col w-100 h-5 text-white text-center">
+      <h1 class="display-4">Panda Columns Duplicates</h1>
+    </div>
+  </div>
+</div>
+<div class="container text-white text-center">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <table class="table table-responsive">
+        {{dupl | safe }}
+      </table>
+    </div>
+  </div>
+</div>
+<div class="flex-container borderML w-100">
+  <div class="row w-100 m-3 p-3">
+    <div class="col w-100 h-5 text-white text-center">
+      <h1 class="display-4">Scatter Plot Locations/Categories</h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid w-100">
+  <div class="row w-100 justify-content-center">
+      <div class="chart" id="bargraph3">
+        <script>
+          var graphs3 = {{plot3 | safe}};
+          Plotly.plot('bargraph3',graphs3,{});
+        </script>
+      </div>
+  </div>
+</div>
+<div class="flex-container borderML w-100">
+  <div class="row w-100 m-3 p-3">
+    <div class="col w-100 h-5 text-white text-center">
+      <h1 class="display-4">Parallel Categories Diagram</h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid w-100">
+  <div class="row w-100 justify-content-center">
+      <div class="chart" id="bargraph4">
+        <script>
+          var graphs4 = {{plot4 | safe}};
+          Plotly.plot('bargraph4',graphs4,{});
+        </script>
+      </div>
+  </div>
+</div>
+<div class="flex-container borderML w-100">
+  <div class="row w-100 m-3 p-3">
+    <div class="col w-100 h-5 text-white text-center">
+      <h1 class="display-4">Height/Weight/Age 3D Visualizer</h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid w-100 mb-3">
+  <div class="row w-100 justify-content-center">
+      <div class="chart" id="bargraph5">
+        <script>
+          var graphs5 = {{plot5 | safe}};
+          Plotly.plot('bargraph5',graphs5,{});
+        </script>
+      </div>
+  </div>
+</div>
+<div class="flex-container borderML w-100">
+  <div class="row w-100 m-3 p-3">
+    <div class="col w-100 h-5 text-white text-center">
+      <h1 class="display-4">Id to Names Tables</h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid text-white text-left">
+  <div class="row justify-content-center">
+    <div class="col-sm flex-grow-0">
+      <table class="table table-responsive">
+        {{categories | safe }}
+      </table>
+    </div>
+    <div class="col-sm flex-grow-0">
+      <table class="table table-responsive">
+        {{ages | safe }}
+      </table>
+    </div>
+    <div class="col-sm flex-grow-0">
+      <table class="table table-responsive">
+        {{religions | safe }}
+      </table>
+    </div>
+    <div class="col-sm flex-grow-0">
+      <table class="table table-responsive">
+        {{genders | safe }}
+      </table>
+    </div>
+    <div class="col-sm flex-grow-0">
+      <table class="table table-responsive">
+        {{educations | safe }}
+      </table>
+    </div>
+    <div class="col-sm flex-grow-0">
+      <table class="table table-responsive">
+        {{hairs | safe }}
+      </table>
+    </div>
+    <div class="col-sm flex-grow-0">
+      <table class="table table-responsive">
+        {{locations | safe }}
+      </table>
+    </div>
+    <div class="col-sm flex-grow-0">
+      <table class="table table-responsive">
+        {{heights | safe }}
+      </table>
+    </div>
+    <div class="col-sm flex-grow-0">
+      <table class="table table-responsive">
+        {{weights | safe }}
+      </table>
+    </div>
+  </div>
+</div>
+<div class="container" style="margin-bottom: 100px !important;">
+</div>
+  <!-- End Main=========================================-->
+  <!-- Footer===========================================-->
+  <footer class="footer fixed-bottom text-white bg-one">
+    <div class="container">
+      <div class="text-center">
+        <span style="line-height: 60px;">
+          Copyright &copy;
+          <script>document.write(new Date().getFullYear())</script> - 3KTeam - Beta Version of ML Modules
+        </span>
+      </div>
+    </div>
+  </footer>
+ </body>
+</html>
