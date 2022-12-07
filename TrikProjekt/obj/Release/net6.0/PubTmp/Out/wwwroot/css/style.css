@@ -914,6 +914,13 @@ a:hover {
   background-attachment: fixed;
 }
 
+.bg-3 {
+    background-image: url("../images/backgrounds/bg-3v.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .hero-area {
   background-size: cover;
   height: 100vh;

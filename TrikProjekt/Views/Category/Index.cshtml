@@ -1,9 +1,14 @@
-﻿@model IEnumerable<TrikProjekt56.Models.Category>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<TrikProjekt56.Models.Category>
 @{
     ViewData["Title"] = "Index";
     SortModel sortModel = (SortModel)ViewData["sortModel"];
     SiteModel site = ViewBag.Site;
 }
+@if (Admins.admins.Contains(@UserManager.GetUserName(User)))
+{
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <div class="container-fluid mainSystemCollection mt-3 mb-2">
     <div class = "row">
@@ -79,6 +84,10 @@
             <partial name="BottomBar" model="@site" />
     </div>
 </div>
+}
+else{
+    <h1 class="text-center mt-5">YOU HAVE NO PERMISSION TO ACCESS THIS SITE! PLEASE CONTACT YOUR ADMINISTRATOR</h1>
+}
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationPartial");}
 }

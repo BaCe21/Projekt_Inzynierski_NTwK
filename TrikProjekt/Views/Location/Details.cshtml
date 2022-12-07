@@ -1,7 +1,12 @@
-﻿@model TrikProjekt56.Models.Location
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model TrikProjekt56.Models.Location
 @{
     ViewData["Title"] = "Details";
 }
+@if (Admins.admins.Contains(@UserManager.GetUserName(User)))
+{
 
 <div class="row Index MainContainer justify-content-center">
     <h1>Location Details</h1>
@@ -27,3 +32,7 @@
         <a class="btn btn-secondary ml-1" asp-action="Index" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageSize="@TempData.Peek("PageSize")" asp-route-pageIndex="@TempData.Peek("CurrentPage")">Back</a>
     </div>
 </div>
+}
+else{
+    <h1 class="text-center mt-5">YOU HAVE NO PERMISSION TO ACCESS THIS SITE! PLEASE CONTACT YOUR ADMINISTRATOR</h1>
+}

@@ -3894,7 +3894,6 @@ C:\Users\jakub\Desktop\TrikProjekt\TrikProjekt\obj\Debug\net6.0\refint\TrikProje
 C:\Users\jakub\Desktop\TrikProjekt\TrikProjekt\obj\Debug\net6.0\TrikProjekt56.pdb
 C:\Users\jakub\Desktop\TrikProjekt\TrikProjekt\obj\Debug\net6.0\TrikProjekt56.genruntimeconfig.cache
 C:\Users\jakub\Desktop\TrikProjekt\TrikProjekt\obj\Debug\net6.0\ref\TrikProjekt56.dll
-C:\Users\jakub\Desktop\TrikProjekt\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\jakub\Desktop\TrikProjekt\bin\Debug\net6.0\appsettings.json
 C:\Users\jakub\Desktop\TrikProjekt\bin\Debug\net6.0\TrikProjekt56.staticwebassets.runtime.json
 C:\Users\jakub\Desktop\TrikProjekt\bin\Debug\net6.0\TrikProjekt56.exe
@@ -4458,3 +4457,6 @@ C:\Users\jakub\Desktop\TrikProjekt\TrikProjekt\bin\Debug\net6.0\Microsoft.Azure.
 C:\Users\jakub\Desktop\TrikProjekt\TrikProjekt\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\jakub\Desktop\TrikProjekt\TrikProjekt\bin\Debug\net6.0\Microsoft.Rest.ClientRuntime.dll
 C:\Users\jakub\Desktop\TrikProjekt\TrikProjekt\bin\Debug\net6.0\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\jakub\Desktop\TrikProjekt\bin\Debug\net6.0\Microsoft.Azure.CognitiveServices.Vision.ComputerVision.dll
+C:\Users\jakub\Desktop\TrikProjekt\bin\Debug\net6.0\Microsoft.Rest.ClientRuntime.dll
+C:\Users\jakub\Desktop\TrikProjekt\bin\Debug\net6.0\Microsoft.Rest.ClientRuntime.Azure.dll

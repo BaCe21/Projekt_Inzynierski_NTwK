@@ -1,5 +1,4 @@
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\TrikProjekt56.exe
-C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\appsettings.json
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\TrikProjekt56.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\TrikProjekt56.runtimeconfig.json
@@ -17,6 +16,7 @@ C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNe
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.Azure.CognitiveServices.Vision.ComputerVision.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.Build.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.Build.Framework.dll
@@ -54,6 +54,8 @@ C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.Ident
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.NET.StringTools.dll
+C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.Rest.ClientRuntime.dll
+C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.Rest.ClientRuntime.Azure.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Debugger.Contracts.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\jakub\Desktop\TrikProjekt\obj\Release\net6.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll

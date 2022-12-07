@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt\\TrikProjekt56.csproj": {}
+    "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt56.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt\\TrikProjekt56.csproj": {
+    "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt56.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt\\TrikProjekt56.csproj",
+        "projectUniqueName": "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt56.csproj",
         "projectName": "TrikProjekt56",
-        "projectPath": "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt\\TrikProjekt56.csproj",
+        "projectPath": "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt56.csproj",
         "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jakub\\Desktop\\TrikProjekt\\TrikProjekt\\obj\\",
+        "outputPath": "C:\\Users\\jakub\\Desktop\\TrikProjekt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",

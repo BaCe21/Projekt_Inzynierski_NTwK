@@ -1,8 +1,13 @@
-﻿@model TrikProjekt56.Models.Height
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model TrikProjekt56.Models.Height
 
 @{
     ViewData["Title"] = "Edit";
 }
+@if (Admins.admins.Contains(@UserManager.GetUserName(User)))
+{
 
 <div class="row Index MainContainer justify-content-center">
     <h1>Height Edit</h1>
@@ -30,7 +35,10 @@
         </form>
     </div>
 </div>
-
+}
+else{
+    <h1 class="text-center mt-5">YOU HAVE NO PERMISSION TO ACCESS THIS SITE! PLEASE CONTACT YOUR ADMINISTRATOR</h1>
+}
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationPartial");}
 }

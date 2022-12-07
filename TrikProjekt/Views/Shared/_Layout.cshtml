@@ -55,40 +55,6 @@
                             </li>
                             @if (SignInManager.IsSignedIn(User))
                             {
-                                <li class="dropdown nav-item">
-                                    <a class="nav-link dropdown-toggle text-white" aria-expanded="true" aria-haspopup="true" data-toggle="dropdown">
-                                    <i class="fa-brands fa-buffer fa-sm mr-1"></i>Modules
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="Index">Locations</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Age" asp-action="Index">Age</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Hair" asp-action="Index">Hair</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Gender" asp-action="Index">Gender</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Religion" asp-action="Index">Religion</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Education" asp-action="Index">Education</a>
-                                        </li>
-                                        <li class="nav-item">
-                                           <a class="nav-link text-dark" asp-area="" asp-controller="Height" asp-action="Index">Height</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Weight" asp-action="Index">Weight</a>
-                                        </li>
-                                    </ul>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white target" asp-area="" asp-controller="Case" asp-action="Index"><i class="fa-solid fa-list fa-sm mr-1"></i>Cases</a>
                                 </li>
@@ -100,6 +66,40 @@
                                 </li>
                                 @if (Admins.admins.Contains(@UserManager.GetUserName(User)))
                                 {
+                                    <li class="dropdown nav-item">
+                                    <a class="nav-link dropdown-toggle text-white" aria-expanded="true" aria-haspopup="true" data-toggle="dropdown">
+                                    <i class="fa-brands fa-buffer fa-sm mr-1"></i>Modules
+                                    </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" asp-area="" asp-controller="Location" asp-action="Index">Locations</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" asp-area="" asp-controller="Age" asp-action="Index">Age</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" asp-area="" asp-controller="Hair" asp-action="Index">Hair</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" asp-area="" asp-controller="Gender" asp-action="Index">Gender</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" asp-area="" asp-controller="Religion" asp-action="Index">Religion</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" asp-area="" asp-controller="Education" asp-action="Index">Education</a>
+                                            </li>
+                                            <li class="nav-item">
+                                               <a class="nav-link text-dark" asp-area="" asp-controller="Height" asp-action="Index">Height</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link text-dark" asp-area="" asp-controller="Weight" asp-action="Index">Weight</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-white" href="https://trikpython.azurewebsites.net"><i class="fa-solid fa-share-nodes fa-sm mr-1"></i>Machine Learning</a>
                                     </li>
@@ -167,13 +167,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 text-center" style="line-height: 60px;">
-                    <p class="">Copyright &copy; <script>document.write(new Date().getFullYear())</script> - 3KTeam V-1.0.3</p>
+                    <p class="">Copyright &copy; <script>document.write(new Date().getFullYear())</script> - 3KTeam V-1.0.4</p>
                 </div>
                 <div class="col-6 social-icon p-0">
                     <ul class="list-inline">
                         <li class="list-inline-item mt-2"><a href="https://facebook.com/"><i class="tf-ion-social-facebook"></i></a></li>
                         <li class="list-inline-item mt-2"><a href="https://google.com/"><i class="tf-ion-social-google"></i></a></li>
-                        <li class="list-inline-item mt-2"><a href="https://github.com/"><i class="tf-ion-social-github"></i></a></li>
+                        <li class="list-inline-item mt-2"><a href="https://github.com/BaCe21/Projekt_Inzynierski_NTwK"><i class="tf-ion-social-github"></i></a></li>
                     </ul>
                 </div>
             </div>
