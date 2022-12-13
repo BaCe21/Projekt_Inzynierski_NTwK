@@ -164,7 +164,7 @@ namespace TrikProjekt56.Controllers
             return View();
         }
 
-        public IActionResult Index(string sortExpression = "", string SearchText = "", int pageIndex = 1, int pageSize = 10)
+        public IActionResult Index(string sortExpression = "", string SearchText = "", int pageIndex = 1, int pageSize = 25)
         {
             SortModel sortModel = new SortModel();
             sortModel.AddColumn("Code");

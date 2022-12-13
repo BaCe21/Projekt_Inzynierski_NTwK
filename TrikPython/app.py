@@ -98,7 +98,7 @@ def translators():
 
    query9 = "SELECT [Name] FROM [dbo].[Weights];"
    sql_query9  = pd.read_sql(query9, cnxn1)
-   dfw = pd.DataFrame(sql_query3, columns = ['Name'])
+   dfw = pd.DataFrame(sql_query9, columns = ['Name'])
    dfw.rename(columns = {'Name':'Weights'}, inplace = True)
    dfw.index = np.arange(1, len(dfw) + 1)
 

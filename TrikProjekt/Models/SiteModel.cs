@@ -61,7 +61,7 @@ namespace TrikProjekt56.Models
         public List<SelectListItem> GetPageSizes()
         {
             var pageSizes = new List<SelectListItem>();
-            for (int lp = 1; lp <= 50; lp += 1)
+            for (int lp = 25; lp <= 50; lp += 1)
             {
                 if (lp == this.PageSize)
                     {
